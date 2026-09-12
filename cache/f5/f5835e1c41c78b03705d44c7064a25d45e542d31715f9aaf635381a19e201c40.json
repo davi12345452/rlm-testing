@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nMariana trabalha como auxiliar administrativa desde março de 2019. A partir de fevereiro de 2024 a empresa passou a atrasar os salários, e em junho de 2024 ela já acumulava quatro meses de salários não pagos. Mariana ajuizou reclamação trabalhista pedindo a rescisão indireta do contrato. Na audiência realizada em agosto de 2024, a empresa depositou integralmente os salários atrasados e sustentou que, com o pagamento, não restaria falta grave alguma, e que Mariana, por ter faltado ao trabalho nas duas semanas anteriores à audiência, teria dado causa à ruptura por abandono de emprego.\n\nPERGUNTA:\nA rescisão indireta deve ser reconhecida? Qual é o fundamento legal e quais os efeitos do pagamento realizado em audiência?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Sim, a rescisão indireta deve ser reconhecida. O atraso reiterado no pagamento de salários por quatro meses configura descumprimento manifesto e grave das obrigações contratuais pelo empregador, com base no artigo 483, alínea 'd', da CLT. Quanto ao afastamento do serviço nas semanas anteriores à audiência, não se configura abandono de emprego, pois o artigo 483, § 3º, da CLT faculta expressamente ao trabalhador a permanência ou não no serviço até a decisão final quando a ação se fundamenta no descumprimento das obrigações contratuais. Por fim, o depósito integral dos salários em atraso realizado apenas em audiência não elide a falta patronal nem purga a mora de modo a descaracterizar a rescisão indireta, uma vez que a gravidade da conduta já havia violado de forma definitiva a fidúcia da relação de emprego; o pagamento opera apenas a quitação do crédito salarial inadimplido, remanescendo devidas todas as verbas rescisórias correlatas à dispensa imotivada.\",\n  \"citations\": [\n    \"CLT art. 483, \\\"d\\\"\",\n    \"CLT art. 483, § 3º\"\n  ],\n  \"reasoning\": \"O atraso reiterado e substancial de salários enquadra-se no art. 483, 'd', da CLT. O § 3º do mesmo dispositivo afasta taxativamente a tese patronal de abandono de emprego pela ausência ao trabalho após ajuizada a rescisão indireta. Além disso, a jurisprudência consolidada do TST não admite a purgação tardia da mora em audiência para afastar a rescisão indireta consumada pela falta grave patronal continuada.\"\n}",
+ "parsed": {
+  "answer": "Sim, a rescisão indireta deve ser reconhecida. O atraso reiterado no pagamento de salários por quatro meses configura descumprimento manifesto e grave das obrigações contratuais pelo empregador, com base no artigo 483, alínea 'd', da CLT. Quanto ao afastamento do serviço nas semanas anteriores à audiência, não se configura abandono de emprego, pois o artigo 483, § 3º, da CLT faculta expressamente ao trabalhador a permanência ou não no serviço até a decisão final quando a ação se fundamenta no descumprimento das obrigações contratuais. Por fim, o depósito integral dos salários em atraso realizado apenas em audiência não elide a falta patronal nem purga a mora de modo a descaracterizar a rescisão indireta, uma vez que a gravidade da conduta já havia violado de forma definitiva a fidúcia da relação de emprego; o pagamento opera apenas a quitação do crédito salarial inadimplido, remanescendo devidas todas as verbas rescisórias correlatas à dispensa imotivada.",
+  "citations": [
+   "CLT art. 483, \"d\"",
+   "CLT art. 483, § 3º"
+  ],
+  "reasoning": "O atraso reiterado e substancial de salários enquadra-se no art. 483, 'd', da CLT. O § 3º do mesmo dispositivo afasta taxativamente a tese patronal de abandono de emprego pela ausência ao trabalho após ajuizada a rescisão indireta. Além disso, a jurisprudência consolidada do TST não admite a purgação tardia da mora em audiência para afastar a rescisão indireta consumada pela falta grave patronal continuada."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 537,
+  "output_tokens": 404,
+  "thought_tokens": 377,
+  "total_tokens": 1318
+ },
+ "finish_reason": "FinishReason.STOP"
+}

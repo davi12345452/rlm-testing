@@ -1,0 +1,84 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nSandra foi admitida em 1º de março de 2012 e dispensada sem justa causa em 20 de setembro de 2021, sem cumprimento nem indenização do aviso prévio. Ela ajuizou reclamação trabalhista em 15 de junho de 2023, postulando diferenças salariais referentes a todo o período contratual e a indenização do aviso prévio proporcional.\n\nPERGUNTA:\nA ação está dentro do prazo? Quais parcelas estão prescritas? Quantos dias de aviso prévio indenizado são devidos?\n\nWHAT YOU HAVE DONE SO FAR:\nTHOUGHT: Let's list the documents in the corpus to see what statutes and case law are available.\nACTION: list_documents()\nOBSERVATION:\nDocuments in the corpus:\n- clt_excerpts: Consolidação das Leis do Trabalho (CLT) — Curated Excerpts (22 sections)\n- precedentes_vinculantes: Overriding Norms: Constitutional Rulings and Transitional Rules (7 sections)\n- sumulas_tst: Súmulas do Tribunal Superior do Trabalho (TST) — Curated Excerpts (16 sections)\n\nTHOUGHT: I will examine the outline of clt_excerpts to identify provisions concerning prescription and notice period (aviso prévio).\nACTION: outline(doc_id='clt_excerpts')\nOBSERVATION:\n# clt_excerpts\n  [CLT art. 2º] Employer, economic group and group liability — status: in force (as amended by Lei 13.467/2017)\n  [CLT art. 3º] Definition of employee — status: in force\n  [CLT art. 11] Limitation period (prescrição) — status: in force\n  [CLT art. 58 §1º] Residual minutes at the time clock — status: in force\n  [CLT art. 58 §2º] Commuting time (horas in itinere) — post-reform wording — status: in force since 11 Nov 2017 (Lei 13.467/2017). **Displaces** the prior case law for\n  [CLT art. 59] Overtime and hour-banking — status: in force (as amended by Lei 13.467/2017)\n  [CLT art. 59-A] The 12x36 shift — status: in force since 11 Nov 2017\n  [CLT art. 62] Workers outside the working-hours regime — status: in force (item III added by Lei 13.467/2017)\n  [CLT art. 71] Intra-shift rest break — status: in force; § 4º has post-reform wording since 11 Nov 2017\n  [CLT art. 74 §2º] Mandatory time records — status: in force (threshold raised from 10 to 20 employees by Lei 13.467/2017)\n  [CLT art. 223-G §1º] Damages for non-pecuniary harm — statutory bands — status: in force, but **read down** by the Supreme Court\n  [CLT art. 442-B] The contracted self-employed worker — status: in force since 11 Nov 2017\n  [CLT art. 468] Contract amendment and reversal from a position of trust — status: in force; § 2º added by Lei 13.467/2017\n  [CLT art. 477 §6º e §8º] Severance payment deadline and penalty — status: in force\n  [CLT art. 482] Just cause attributable to the employee — status: in force\n  [CLT art. 483] Constructive dismissal (rescisão indireta) — status: in force\n  [CLT art. 487] Notice period (aviso prévio) — status: in force; proportionality governed by Lei 12.506/2011\n  [CLT art. 611-A] Collective bargaining prevailing over statute — status: in force since 11 Nov 2017\n  [CLT art. 611-B] Matters excluded from collective bargaining — status: in force since 11 Nov 2017\n  [CLT art. 790-B] Expert-witness fees and legal aid — status: in force, but **partially unconstitutional**\n  [CLT art. 791-A §4º] Loser-pays attorney fees against a legal-aid beneficiary — status: in force, but **partially unconstitutional**\n  [CLT art. 818] Burden of proof — status: in force (as amended by Lei 13.467/2017)\n\nTHOUGHT: I will examine the outline of sumulas_tst and precedentes_vinculantes to see the relevant rules on prescription and notice period.\nACTION: outline(doc_id='sumulas_tst')\nOBSERVATION:\n# sumulas_tst\n  [Súmula 13 TST] Paying late wages in court does not cure the default — status: in force\n  [Súmula 85 TST] Hour-compensation agreements — status: in force, with item VI added after the reform\n  [Súmula 90 TST] Commuting time (horas in itinere) — pre-reform rule — status: **superseded for facts on or after 11 Nov 2017** by the new wording of\n  [Súmula 212 TST] Presumption of contract continuity — status: in force\n  [Súmula 277 TST] Ultra-activity of collective-bargaining clauses — status: **inapplicable** — the underlying doctrine was held unconstitutional\n  [Súmula 291 TST] Suppression of habitual overtime — status: in force\n  [Súmula 331 TST] Outsourcing and the client's liability — status: in force\n  [Súmula 338 TST] Failure to produce time records — status: in force, but its head-count threshold is **out of step with the statute**\n  [Súmula 340 TST] Overtime for commission-based workers — status: in force\n  [Súmula 366 TST] Residual minutes — status: in force\n  [Súmula 372 TST] Ten years of a function bonus — financial stability — status: **superseded for reversals on or after 11 Nov 2017** by [CLT art. 468] § 2º.\n  [Súmula 428 TST] On-call status and telematic devices — status: in force\n  [Súmula 437 TST] Intra-shift break — pre-reform rule — status: **superseded for facts on or after 11 Nov 2017** by [CLT art. 71] § 4º.\n  [Súmula 443 TST] Dismissal of a worker with a stigmatising illness — status: in force\n  [Súmula 444 TST] The 12x36 shift — pre-reform requirement — status: **partially superseded** — [CLT art. 59-A] now allows a written individual agreement\n  [Súmula 460 TST] Transport vouchers — burden of proof — status: in force\n\nTHOUGHT: I will examine the outline of precedentes_vinculantes to see if there are any binding rulings on notice period, prescription, or Lei 12.506/2011.\nACTION: outline(doc_id='precedentes_vinculantes')\nOBSERVATION:\n# precedentes_vinculantes\n  [Lei 13.467/2017 vigência] Commencement of the 2017 labour reform — status: in force\n  [Lei 12.506/2011] Proportional notice period — status: in force\n  [CF art. 7º XXIX] Constitutional limitation period — status: in force\n  [STF ADI 5766] Legal aid and litigation costs in the labour courts — status: binding, with general effect (*erga omnes*)\n  [STF ADPF 323] Ultra-activity of collective agreements — status: binding, with general effect\n  [STF ADI 6050] Statutory bands for non-pecuniary damages — status: binding, with general effect\n  [Princípio da primazia da realidade] Substance over form — status: general principle, in force\n\nTHOUGHT: I need to read CLT art. 11, CF art. 7º XXIX, CLT art. 487, and Lei 12.506/2011 to determine prescription rules and notice period calculation.\nACTION: read(key='CLT art. 11')\nOBSERVATION:\n--- clt_excerpts (lines 43-52) ---\n[CLT art. 11] Limitation period (prescrição)\nStatus: in force\nCross-refs: [CF art. 7º XXIX]\nA pretensão quanto a créditos resultantes das relações de trabalho prescreve em cinco anos para os\ntrabalhadores urbanos e rurais, até o limite de dois anos após a extinção do contrato de trabalho.\n\nNa prática: ajuizada a ação dentro de dois anos do fim do contrato (prescrição bienal), só são\nexigíveis as parcelas vencidas nos cinco anos anteriores ao ajuizamento (prescrição quinquenal).\n\nTHOUGHT: I will read Lei 12.506/2011 to see the exact formula and rules for calculating proportional notice period.\nACTION: read(key='Lei 12.506/2011')\nOBSERVATION:\n--- precedentes_vinculantes (lines 31-41) ---\n[Lei 12.506/2011] Proportional notice period\nStatus: in force\nCross-refs: [CLT art. 487]\nO aviso prévio será concedido na proporção de **trinta dias** aos empregados que contem até um ano de\nserviço na mesma empresa, **acrescido de três dias por ano de serviço prestado na mesma empresa, até\no máximo de sessenta dias, perfazendo um total de até noventa dias**.\n\nExemplo de cálculo: 7 anos completos de casa → 30 + (3 × 7) = 51 dias. O acréscimo é devido apenas ao\nempregado, não ao empregador que pede demissão.\n\nTHOUGHT: I will read CF art. 7º XXIX and CLT art. 487 to ensure all details and cross-references regarding prescription and notice period projection are checked.\nACTION: read(key='CF art. 7º XXIX')\nOBSERVATION:\n--- precedentes_vinculantes (lines 42-49) ---\n[CF art. 7º XXIX] Constitutional limitation period\nStatus: in force\nCross-refs: [CLT art. 11]\nSão direitos dos trabalhadores urbanos e rurais: ação, quanto aos créditos resultantes das relações\nde trabalho, com prazo prescricional de **cinco anos** para os trabalhadores urbanos e rurais, **até\no limite de dois anos após a extinção do contrato de trabalho**.\n\nActions remaining before you are forced to answer: 5.",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou do not receive the corpus. You explore it, one action per turn, using these tools:\n\nlist_documents()            -> the documents in the corpus\noutline(doc_id=\"\")          -> every section key, title and validity status (cheap, start here)\ngrep(pattern, doc_id=\"\")    -> case-insensitive regex over section text, returns keys + snippets\nread(key)                   -> the full text of one section, by its citation key\nfollow(key)                 -> the sections cross-referenced by a section, with their status\n\nplus two control actions:\n\nspawn(sub_question, focus_keys=[])  -> run a fresh copy of yourself on a self-contained\n                                       sub-question, starting from the given section keys. It\n                                       explores on its own and returns a short conclusion with\n                                       citations. Use it when a sub-problem would otherwise force\n                                       you to read several long sections you do not need in full.\nfinish(citations)                  -> stop investigating. You will then be asked to write the\n                                       final answer from your transcript, so finish only once you\n                                       can support every part of it from sections you have read.\n\nHow to work:\n- Start with outline() to see every section key and its validity status. It is cheap and it is the\n  map. Do not grep blindly before you have seen the map.\n- When a section looks relevant, read() it, then follow() it. A cross-reference is the corpus\n  telling you that another provision modifies or completes this one; ignoring it is how you get a\n  confidently wrong answer.\n- Delegate with spawn when a sub-question is separable, for example one period of a contract that\n  straddles a legal reform.\n- Do not finish while an unread cross-reference could change the outcome.\n\nReturn exactly one action per turn, as JSON matching the schema. Fill only the fields that action\nneeds.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "thought": {
+     "type": "string",
+     "description": "One or two sentences: what you now know and what you still need."
+    },
+    "action": {
+     "type": "string",
+     "enum": [
+      "list_documents",
+      "outline",
+      "grep",
+      "read",
+      "follow",
+      "spawn",
+      "finish"
+     ]
+    },
+    "doc_id": {
+     "type": "string",
+     "description": "Argument for outline/grep."
+    },
+    "pattern": {
+     "type": "string",
+     "description": "Argument for grep."
+    },
+    "key": {
+     "type": "string",
+     "description": "Argument for read/follow."
+    },
+    "sub_question": {
+     "type": "string",
+     "description": "Argument for spawn."
+    },
+    "focus_keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for spawn: section keys the sub-agent should start from."
+    },
+    "answer": {
+     "type": "string",
+     "description": "REQUIRED when action is finish: the complete legal answer in Brazilian Portuguese. Never finish with this field empty."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for finish: exact corpus citation keys."
+    }
+   },
+   "required": [
+    "thought",
+    "action"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"thought\": \"I will read CLT art. 487 to confirm notice period rules and any interaction with contract projection/termination.\",\n  \"action\": \"read\",\n  \"key\": \"CLT art. 487\"\n}",
+ "parsed": {
+  "thought": "I will read CLT art. 487 to confirm notice period rules and any interaction with contract projection/termination.",
+  "action": "read",
+  "key": "CLT art. 487"
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 3375,
+  "output_tokens": 56,
+  "thought_tokens": 14,
+  "total_tokens": 3445
+ },
+ "finish_reason": "FinishReason.STOP"
+}

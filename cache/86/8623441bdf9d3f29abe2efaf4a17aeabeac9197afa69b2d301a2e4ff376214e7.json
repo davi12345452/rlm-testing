@@ -1,0 +1,57 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nSandra foi admitida em 1º de março de 2012 e dispensada sem justa causa em 20 de setembro de 2021, sem cumprimento nem indenização do aviso prévio. Ela ajuizou reclamação trabalhista em 15 de junho de 2023, postulando diferenças salariais referentes a todo o período contratual e a indenização do aviso prévio proporcional.\n\nPERGUNTA:\nA ação está dentro do prazo? Quais parcelas estão prescritas? Quantos dias de aviso prévio indenizado são devidos?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"1. Sim, a ação foi ajuizada dentro do prazo bienal. O término do contrato projeta-se com a integração do aviso prévio indenizado (OJ 83 da SDI-1 do TST e CLT art. 487, § 1º), de modo que, tendo a dispensa ocorrido em 20/09/2021 e a reclamação sido distribuída em 15/06/2023, não transcorreram os 2 anos previstos no art. 7º, XXIX, da CF/88 e art. 11 da CLT.\\n\\n2. Estão prescritas as parcelas exigíveis anteriores a 15 de junho de 2018, considerando o marco quinquenal contado regressivamente da data de ajuizamento da ação (15/06/2023), nos termos do art. 7º, XXIX, da CF/88 e da Súmula 308, I, do TST.\\n\\n3. São devidos 57 dias de aviso prévio indenizado. Sandra contava com 9 anos completos de serviço prestado ao empregador (de 01/03/2012 a 01/03/2021). Conforme a Lei 12.506/2011, são devidos 30 dias básicos acrescidos de 3 dias por ano completo de serviço (9 x 3 = 27 dias), totalizando 57 dias.\",\n  \"citations\": [\n    \"CF/88 art. 7º, XXIX\",\n    \"CLT art. 11\",\n    \"CLT art. 487, § 1º\",\n    \"Lei 12.506/2011 art. 1º\",\n    \"Súmula 308, I, TST\",\n    \"OJ 83 SDI-1 TST\"\n  ],\n  \"reasoning\": \"A prescrição bienal extintiva corre a partir do encerramento do contrato projetado pelo aviso prévio indenizado (OJ 83 da SDI-1 e CLT art. 487, § 1º), mantendo a pretensão íntegra. A prescrição quinquenal tem como marco interruptivo a data de ajuizamento da reclamatória trabalhista (Súmula 308, I, TST e CLT art. 11). A duração do aviso prévio rege-se estritamente pela Lei 12.506/2011, com base nos anos completos de vigência do vínculo.\"\n}",
+ "parsed": {
+  "answer": "1. Sim, a ação foi ajuizada dentro do prazo bienal. O término do contrato projeta-se com a integração do aviso prévio indenizado (OJ 83 da SDI-1 do TST e CLT art. 487, § 1º), de modo que, tendo a dispensa ocorrido em 20/09/2021 e a reclamação sido distribuída em 15/06/2023, não transcorreram os 2 anos previstos no art. 7º, XXIX, da CF/88 e art. 11 da CLT.\n\n2. Estão prescritas as parcelas exigíveis anteriores a 15 de junho de 2018, considerando o marco quinquenal contado regressivamente da data de ajuizamento da ação (15/06/2023), nos termos do art. 7º, XXIX, da CF/88 e da Súmula 308, I, do TST.\n\n3. São devidos 57 dias de aviso prévio indenizado. Sandra contava com 9 anos completos de serviço prestado ao empregador (de 01/03/2012 a 01/03/2021). Conforme a Lei 12.506/2011, são devidos 30 dias básicos acrescidos de 3 dias por ano completo de serviço (9 x 3 = 27 dias), totalizando 57 dias.",
+  "citations": [
+   "CF/88 art. 7º, XXIX",
+   "CLT art. 11",
+   "CLT art. 487, § 1º",
+   "Lei 12.506/2011 art. 1º",
+   "Súmula 308, I, TST",
+   "OJ 83 SDI-1 TST"
+  ],
+  "reasoning": "A prescrição bienal extintiva corre a partir do encerramento do contrato projetado pelo aviso prévio indenizado (OJ 83 da SDI-1 e CLT art. 487, § 1º), mantendo a pretensão íntegra. A prescrição quinquenal tem como marco interruptivo a data de ajuizamento da reclamatória trabalhista (Súmula 308, I, TST e CLT art. 11). A duração do aviso prévio rege-se estritamente pela Lei 12.506/2011, com base nos anos completos de vigência do vínculo."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 484,
+  "output_tokens": 603,
+  "thought_tokens": 968,
+  "total_tokens": 2055
+ },
+ "finish_reason": "FinishReason.STOP"
+}

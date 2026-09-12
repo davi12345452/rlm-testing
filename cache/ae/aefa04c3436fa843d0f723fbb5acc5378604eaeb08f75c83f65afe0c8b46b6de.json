@@ -1,0 +1,88 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nPedro trabalhou de 2021 a 2024 em uma empresa que, comprovadamente, contava com 15 empregados em seu único estabelecimento. Ele alega jornada das 8h às 20h, de segunda a sexta, e pede horas extras. A empresa não juntou aos autos qualquer controle de frequência, afirmando que não estava obrigada a mantê-los. Pedro sustenta que a ausência dos cartões gera presunção de veracidade da jornada declarada na petição inicial.\n\nPERGUNTA:\nA não apresentação de controles de frequência gera, neste caso, presunção de veracidade da jornada alegada? De quem é o ônus da prova?\n\nWHAT YOU HAVE DONE SO FAR:\nTHOUGHT: Let's check the available documents in the corpus first.\nACTION: list_documents()\nOBSERVATION:\nDocuments in the corpus:\n- clt_excerpts: Consolidação das Leis do Trabalho (CLT) — Curated Excerpts (22 sections)\n- precedentes_vinculantes: Overriding Norms: Constitutional Rulings and Transitional Rules (7 sections)\n- sumulas_tst: Súmulas do Tribunal Superior do Trabalho (TST) — Curated Excerpts (16 sections)\n\nTHOUGHT: I need to inspect the sections in clt_excerpts and sumulas_tst to locate CLT art. 74 and Súmula 338 do TST.\nACTION: outline(doc_id='clt_excerpts')\nOBSERVATION:\n# clt_excerpts\n  [CLT art. 2º] Employer, economic group and group liability — status: in force (as amended by Lei 13.467/2017)\n  [CLT art. 3º] Definition of employee — status: in force\n  [CLT art. 11] Limitation period (prescrição) — status: in force\n  [CLT art. 58 §1º] Residual minutes at the time clock — status: in force\n  [CLT art. 58 §2º] Commuting time (horas in itinere) — post-reform wording — status: in force since 11 Nov 2017 (Lei 13.467/2017). **Displaces** the prior case law for\n  [CLT art. 59] Overtime and hour-banking — status: in force (as amended by Lei 13.467/2017)\n  [CLT art. 59-A] The 12x36 shift — status: in force since 11 Nov 2017\n  [CLT art. 62] Workers outside the working-hours regime — status: in force (item III added by Lei 13.467/2017)\n  [CLT art. 71] Intra-shift rest break — status: in force; § 4º has post-reform wording since 11 Nov 2017\n  [CLT art. 74 §2º] Mandatory time records — status: in force (threshold raised from 10 to 20 employees by Lei 13.467/2017)\n  [CLT art. 223-G §1º] Damages for non-pecuniary harm — statutory bands — status: in force, but **read down** by the Supreme Court\n  [CLT art. 442-B] The contracted self-employed worker — status: in force since 11 Nov 2017\n  [CLT art. 468] Contract amendment and reversal from a position of trust — status: in force; § 2º added by Lei 13.467/2017\n  [CLT art. 477 §6º e §8º] Severance payment deadline and penalty — status: in force\n  [CLT art. 482] Just cause attributable to the employee — status: in force\n  [CLT art. 483] Constructive dismissal (rescisão indireta) — status: in force\n  [CLT art. 487] Notice period (aviso prévio) — status: in force; proportionality governed by Lei 12.506/2011\n  [CLT art. 611-A] Collective bargaining prevailing over statute — status: in force since 11 Nov 2017\n  [CLT art. 611-B] Matters excluded from collective bargaining — status: in force since 11 Nov 2017\n  [CLT art. 790-B] Expert-witness fees and legal aid — status: in force, but **partially unconstitutional**\n  [CLT art. 791-A §4º] Loser-pays attorney fees against a legal-aid beneficiary — status: in force, but **partially unconstitutional**\n  [CLT art. 818] Burden of proof — status: in force (as amended by Lei 13.467/2017)\n\nTHOUGHT: I will read CLT art. 74 §2º and CLT art. 818 to see the threshold for mandatory time records and burden of proof.\nACTION: read(key='CLT art. 74 §2º')\nOBSERVATION:\n--- clt_excerpts (lines 132-141) ---\n[CLT art. 74 §2º] Mandatory time records\nStatus: in force (threshold raised from 10 to 20 employees by Lei 13.467/2017)\nCross-refs: [Súmula 338 TST]\nPara os estabelecimentos com mais de vinte trabalhadores será obrigatória a anotação da hora de\nentrada e de saída, em registro manual, mecânico ou eletrônico.\n\n> **Conflict note.** [Súmula 338 TST] still reads \"mais de 10 empregados\", reflecting the pre-reform\n> threshold. An establishment with, say, 15 employees sits exactly in the gap between the two texts.\n\nTHOUGHT: I need to read Súmula 338 TST and CLT art. 818 to see the conflict and burden of proof rules.\nACTION: read(key='Súmula 338 TST')\nOBSERVATION:\n--- sumulas_tst (lines 102-122) ---\n[Súmula 338 TST] Failure to produce time records\nStatus: in force, but its head-count threshold is **out of step with the statute**\nCross-refs: [CLT art. 74 §2º], [CLT art. 818]\nI — É ônus do empregador que conta com **mais de 10 (dez) empregados** o registro da jornada de\ntrabalho na forma do art. 74, § 2º, da CLT. A não apresentação injustificada dos controles de\nfrequência gera **presunção relativa de veracidade** da jornada de trabalho, a qual pode ser elidida\npor prova em contrário.\n\nII — A presunção de veracidade da jornada de trabalho, ainda que prevista em instrumento normativo,\npode ser elidida por prova em contrário.\n\nIII — Os cartões de ponto que demonstram horários de entrada e saída **uniformes** são inválidos como\nmeio de prova, invertendo-se o ônus da prova, relativo às horas extras, que passa a ser do\nempregador.\n\n> **Conflict note.** The súmula says \"mais de 10\"; [CLT art. 74 §2º], as amended in 2017, says \"mais\n> de 20\". Establishments between 11 and 20 employees fall in the gap and require reasoning about\n> which text governs — the statute, being later and hierarchically superior, prevails on the\n> *obligation* to keep records.\n\nTHOUGHT: I will read CLT art. 818 to see the burden of proof rules.\nACTION: read(key='CLT art. 818')\nOBSERVATION:\n--- clt_excerpts (lines 276-287) ---\n[CLT art. 818] Burden of proof\nStatus: in force (as amended by Lei 13.467/2017)\nCross-refs: [Súmula 212 TST], [Súmula 338 TST], [Súmula 460 TST]\nO ônus da prova incumbe:\nI — ao reclamante, quanto ao fato constitutivo de seu direito;\nII — ao reclamado, quanto à existência de fato impeditivo, modificativo ou extintivo do direito do\nreclamante.\n\n§ 1º Nos casos previstos em lei ou diante de peculiaridades da causa relacionadas à impossibilidade\nou à excessiva dificuldade de cumprir o encargo, o juízo poderá atribuir o ônus da prova de modo\ndiverso (distribuição dinâmica), por decisão fundamentada e antes da abertura da instrução.\n\nActions remaining before you are forced to answer: 7.",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou do not receive the corpus. You explore it, one action per turn, using these tools:\n\nlist_documents()            -> the documents in the corpus\noutline(doc_id=\"\")          -> every section key, title and validity status (cheap, start here)\ngrep(pattern, doc_id=\"\")    -> case-insensitive regex over section text, returns keys + snippets\nread(key)                   -> the full text of one section, by its citation key\nfollow(key)                 -> the sections cross-referenced by a section, with their status\n\nplus two control actions:\n\nspawn(sub_question, focus_keys=[])  -> run a fresh copy of yourself on a self-contained\n                                       sub-question, starting from the given section keys. It\n                                       explores on its own and returns a short conclusion with\n                                       citations. Use it when a sub-problem would otherwise force\n                                       you to read several long sections you do not need in full.\nfinish(citations)                  -> stop investigating. You will then be asked to write the\n                                       final answer from your transcript, so finish only once you\n                                       can support every part of it from sections you have read.\n\nHow to work:\n- Start with outline() to see every section key and its validity status. It is cheap and it is the\n  map. Do not grep blindly before you have seen the map.\n- When a section looks relevant, read() it, then follow() it. A cross-reference is the corpus\n  telling you that another provision modifies or completes this one; ignoring it is how you get a\n  confidently wrong answer.\n- Delegate with spawn when a sub-question is separable, for example one period of a contract that\n  straddles a legal reform.\n- Do not finish while an unread cross-reference could change the outcome.\n\nReturn exactly one action per turn, as JSON matching the schema. Fill only the fields that action\nneeds.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "thought": {
+     "type": "string",
+     "description": "One or two sentences: what you now know and what you still need."
+    },
+    "action": {
+     "type": "string",
+     "enum": [
+      "list_documents",
+      "outline",
+      "grep",
+      "read",
+      "follow",
+      "spawn",
+      "finish"
+     ]
+    },
+    "doc_id": {
+     "type": "string",
+     "description": "Argument for outline/grep."
+    },
+    "pattern": {
+     "type": "string",
+     "description": "Argument for grep."
+    },
+    "key": {
+     "type": "string",
+     "description": "Argument for read/follow."
+    },
+    "sub_question": {
+     "type": "string",
+     "description": "Argument for spawn."
+    },
+    "focus_keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for spawn: section keys the sub-agent should start from."
+    },
+    "answer": {
+     "type": "string",
+     "description": "REQUIRED when action is finish: the complete legal answer in Brazilian Portuguese. Never finish with this field empty."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for finish: exact corpus citation keys."
+    }
+   },
+   "required": [
+    "thought",
+    "action"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"thought\": \"I have all elements required to formulate the complete and precise answer.\",\n  \"action\": \"finish\",\n  \"citations\": [\n    \"CLT art. 74 §2º\",\n    \"CLT art. 818\",\n    \"Súmula 338 TST\"\n  ]\n}",
+ "parsed": {
+  "thought": "I have all elements required to formulate the complete and precise answer.",
+  "action": "finish",
+  "citations": [
+   "CLT art. 74 §2º",
+   "CLT art. 818",
+   "Súmula 338 TST"
+  ]
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 2803,
+  "output_tokens": 79,
+  "thought_tokens": 331,
+  "total_tokens": 3213
+ },
+ "finish_reason": "FinishReason.STOP"
+}

@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "PASSAGENS RECUPERADAS:\n--- passage 1 ---\n[CLT art. 468] (clt_excerpts)\n[CLT art. 468] Contract amendment and reversal from a position of trust\nStatus: in force; § 2º added by Lei 13.467/2017\nCross-refs: [Súmula 372 TST], [Lei 13.467/2017 vigência]\nNos contratos individuais de trabalho só é lícita a alteração das respectivas condições por mútuo\nconsentimento, e ainda assim desde que não resultem, direta ou indiretamente, prejuízos ao empregado.\n\n§ 1º Não se considera alteração unilateral a determinação do empregador para que o respectivo\nempregado reverta ao cargo efetivo, anteriormente ocupado, deixando o exercício de função de\nconfiança.\n\n§ 2º **A reversão ao cargo efetivo não assegura ao empregado o direito à manutenção do pagamento da\ngratificação correspondente**, que não será incorporada ao salário, independentemente do tempo de\nexercício da respectiva função.\n\n> **Conflict note.** § 2º is the statutory answer to [Súmula 372 TST]. For facts after 11 Nov 2017\n> the statute governs; the súmula survives for earlier reversals.\n\n--- passage 2 ---\n[Súmula 291 TST] (sumulas_tst)\n[Súmula 291 TST] Suppression of habitual overtime\nStatus: in force\nCross-refs: [CLT art. 59]\nA supressão total ou parcial, pelo empregador, de serviço suplementar prestado com habitualidade,\ndurante pelo menos um ano, assegura ao empregado o direito à indenização correspondente ao valor de\num mês das horas suprimidas, para cada ano ou fração igual ou superior a seis meses de prestação de\nserviço acima da jornada normal.\n\n--- passage 3 ---\n[Súmula 372 TST] (sumulas_tst)\n[Súmula 372 TST] Ten years of a function bonus — financial stability\nStatus: **superseded for reversals on or after 11 Nov 2017** by [CLT art. 468] § 2º.\nCross-refs: [CLT art. 468], [Lei 13.467/2017 vigência]\nStill governs earlier reversals.\n\nI — Percebida a gratificação de função por dez ou mais anos pelo empregado, se o empregador, sem\njusto motivo, revertê-lo a seu cargo efetivo, não poderá retirar-lhe a gratificação tendo em vista o\nprincípio da estabilidade financeira.\n\nII — Mantido o empregado no exercício da função comissionada, não pode o empregador reduzir o valor\nda gratificação.\n\n--- passage 4 ---\n[Princípio da primazia da realidade] (precedentes_vinculantes)\n[Princípio da primazia da realidade] Substance over form\nStatus: general principle, in force\nCross-refs: [CLT art. 3º], [CLT art. 442-B], [CLT art. 62]\nNo Direito do Trabalho, os fatos prevalecem sobre a forma documental. A denominação dada pelas partes\nao contrato, o enquadramento formal anotado em CTPS ou a assinatura de um contrato de prestação de\nserviços autônomos **não afastam o vínculo de emprego** se, no plano dos fatos, estiverem presentes\npessoalidade, não eventualidade, onerosidade e subordinação.\n\nO mesmo princípio governa o enquadramento no art. 62 da CLT: o que importa é a existência **real** de\ncontrole de jornada, não a anotação formal ou a nomenclatura do cargo.\n\n--- passage 5 ---\n[STF ADI 5766] (precedentes_vinculantes)\n[STF ADI 5766] Legal aid and litigation costs in the labour courts\nStatus: binding, with general effect (*erga omnes*)\nCross-refs: [CLT art. 790-B], [CLT art. 791-A §4º]\nO Supremo Tribunal Federal julgou parcialmente procedente a ação e declarou **inconstitucionais** os\ndispositivos da Reforma Trabalhista que impunham ao beneficiário da justiça gratuita o pagamento de\n**honorários periciais e de honorários advocatícios de sucumbência com os créditos obtidos no próprio\nprocesso ou em outro processo**, bem como a exigência de custas para propositura de nova ação após\narquivamento.\n\n**Operative rule.** O beneficiário da justiça gratuita que sucumbe — inclusive na pretensão objeto da\nperícia — **não pode ter esses encargos descontados dos créditos que obteve na reclamação**. A\nobrigação permanece sob condição suspensiva de exigibilidade e, quanto aos honorários periciais, o\nencargo recai sobre a União na forma da regulamentação aplicável.\n\n--- passage 6 ---\n[CLT art. 482] (clt_excerpts)\n[CLT art. 482] Just cause attributable to the employee\nStatus: in force\nCross-refs: [CLT art. 483]\nConstituem justa causa para rescisão do contrato de trabalho pelo empregador: ato de improbidade;\nincontinência de conduta ou mau procedimento; negociação habitual por conta própria; condenação\ncriminal transitada em julgado; desídia no desempenho das funções; embriaguez habitual ou em\nserviço; violação de segredo da empresa; ato de indisciplina ou de insubordinação; abandono de\nemprego; ato lesivo da honra ou da boa fama praticado no serviço; ofensas físicas; prática constante\nde jogos de azar; perda da habilitação para o exercício da profissão.\n\n> **Direction note.** Este artigo trata da falta do **empregado**. A falta grave do **empregador** é\n> tratada em [CLT art. 483]. Confundi-los inverte o polo da rescisão.\n\nFATOS:\nCarlos exerceu função de confiança de coordenador de equipe, recebendo gratificação de função de 40% sobre o salário-base, de junho de 2009 a setembro de 2021 — mais de doze anos ininterruptos. Em outubro de 2021, sem que lhe fosse imputada qualquer falta, a empresa o reverteu ao cargo efetivo de analista e suprimiu integralmente a gratificação. Carlos pede a manutenção do pagamento da gratificação, invocando estabilidade financeira.\n\nPERGUNTA:\nCarlos tem direito à manutenção da gratificação de função após a reversão?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou are given a set of passages retrieved from the corpus. Answer from those passages alone.\n\nIf the retrieved passages are not sufficient to settle the question — for instance because they\npoint to a provision you were not given — say so explicitly in your answer rather than guessing.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Não. Carlos não tem direito à manutenção da gratificação de função. Embora tenha exercido a função de confiança por mais de dez anos, a reversão ao cargo efetivo ocorreu em outubro de 2021, momento em que já vigorava a redação dada pela Lei 13.467/2017 ao art. 468, § 2º, da CLT. O dispositivo legal expressamente estabelece que a reversão ao cargo efetivo não assegura a manutenção do pagamento da gratificação e veda sua incorporação ao salário, independentemente do tempo em que a função tenha sido exercida. Assim, a regra da estabilidade financeira prevista na Súmula 372 do TST foi superada para reversões efetuadas a partir de 11 de novembro de 2017.\",\n  \"citations\": [\n    \"CLT art. 468\",\n    \"Súmula 372 TST\"\n  ],\n  \"reasoning\": \"O art. 468, § 2º, da CLT rege as reversões ocorridas após 11/11/2017, superando expressamente o entendimento da Súmula 372 do TST e afastando o direito à incorporação da gratificação de função independentemente do tempo de exercício.\"\n}",
+ "parsed": {
+  "answer": "Não. Carlos não tem direito à manutenção da gratificação de função. Embora tenha exercido a função de confiança por mais de dez anos, a reversão ao cargo efetivo ocorreu em outubro de 2021, momento em que já vigorava a redação dada pela Lei 13.467/2017 ao art. 468, § 2º, da CLT. O dispositivo legal expressamente estabelece que a reversão ao cargo efetivo não assegura a manutenção do pagamento da gratificação e veda sua incorporação ao salário, independentemente do tempo em que a função tenha sido exercida. Assim, a regra da estabilidade financeira prevista na Súmula 372 do TST foi superada para reversões efetuadas a partir de 11 de novembro de 2017.",
+  "citations": [
+   "CLT art. 468",
+   "Súmula 372 TST"
+  ],
+  "reasoning": "O art. 468, § 2º, da CLT rege as reversões ocorridas após 11/11/2017, superando expressamente o entendimento da Súmula 372 do TST e afastando o direito à incorporação da gratificação de função independentemente do tempo de exercício."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1883,
+  "output_tokens": 301,
+  "thought_tokens": 903,
+  "total_tokens": 3087
+ },
+ "finish_reason": "FinishReason.STOP"
+}

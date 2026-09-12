@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "PASSAGENS RECUPERADAS:\n--- passage 1 ---\n[CLT art. 223-G §1º] (clt_excerpts)\n[CLT art. 223-G §1º] Damages for non-pecuniary harm — statutory bands\nStatus: in force, but **read down** by the Supreme Court\nCross-refs: [STF ADI 6050]\nAo apreciar o pedido, o juízo considerará a natureza do bem jurídico tutelado e fixará a indenização\nobservando os seguintes parâmetros, calculados sobre o salário contratual do ofendido:\n\nI — ofensa de natureza leve: até três vezes;\nII — ofensa de natureza média: até cinco vezes;\nIII — ofensa de natureza grave: até vinte vezes;\nIV — ofensa de natureza gravíssima: até cinquenta vezes.\n\n> **Constitutional note.** See [STF ADI 6050]: these bands are **orienting parameters, not binding\n> caps**. A judge may exceed them on reasoned grounds.\n\n--- passage 2 ---\n[STF ADI 6050] (precedentes_vinculantes)\n[STF ADI 6050] Statutory bands for non-pecuniary damages\nStatus: binding, with general effect\nCross-refs: [CLT art. 223-G §1º]\nO Supremo Tribunal Federal deu **interpretação conforme a Constituição** aos incisos do art. 223-G,\n§ 1º, da CLT, fixando que os critérios de quantificação ali previstos constituem **parâmetros\norientativos** para a fixação da indenização por dano extrapatrimonial.\n\n**Operative rule.** Os valores indicados **não funcionam como teto absoluto**. O juiz pode arbitrar\nindenização superior ao limite do inciso aplicável, desde que o faça de forma fundamentada,\nobservados os princípios da razoabilidade, da proporcionalidade e da reparação integral, e\nconsiderando a gravidade concreta do dano e a capacidade econômica do ofensor.\n\n--- passage 3 ---\n[Súmula 437 TST] (sumulas_tst)\n[Súmula 437 TST] Intra-shift break — pre-reform rule\nStatus: **superseded for facts on or after 11 Nov 2017** by [CLT art. 71] § 4º.\nCross-refs: [CLT art. 71], [Lei 13.467/2017 vigência]\nStill governs earlier periods.\n\nI — Após a edição da Lei 8.923/94, a não concessão ou a concessão parcial do intervalo intrajornada\nmínimo para repouso e alimentação implica o pagamento **total do período correspondente**, e não\napenas daquele suprimido, com acréscimo de, no mínimo, 50% sobre o valor da remuneração da hora\nnormal de trabalho.\n\nIII — Possui **natureza salarial** a parcela prevista no art. 71, § 4º, da CLT, repercutindo, pois,\nno cálculo de outras parcelas.\n\n> **Temporal note.** Post-reform the statute reverses both points: only the suppressed portion is\n> owed, and its nature is indemnificatory (no integrations).\n\n--- passage 4 ---\n[CLT art. 483] (clt_excerpts)\n[CLT art. 483] Constructive dismissal (rescisão indireta)\nStatus: in force\nCross-refs: [Súmula 13 TST], [CLT art. 477 §6º e §8º], [CLT art. 482]\nO empregado poderá considerar rescindido o contrato e pleitear a devida indenização quando:\n\na) forem exigidos serviços superiores às suas forças, defesos por lei, contrários aos bons costumes,\nou alheios ao contrato;\nb) for tratado pelo empregador ou por seus superiores hierárquicos com rigor excessivo;\nc) correr perigo manifesto de mal considerável;\nd) **não cumprir o empregador as obrigações do contrato**;\ne) praticar o empregador ou seus prepostos, contra ele ou pessoas de sua família, ato lesivo da honra\ne boa fama;\nf) o empregador ou seus prepostos ofenderem-no fisicamente, salvo em caso de legítima defesa;\ng) o empregador reduzir o seu trabalho, sendo este por peça ou tarefa, de forma a afetar\nsensivelmente a importância dos salários.\n\n§ 3º Nas hipóteses das letras **d** e **g**, poderá o empregado pleitear a rescisão de seu contrato\nde trabalho e o pagamento das respectivas indenizações, **permanecendo ou não no serviço até final\ndecisão do processo**.\n\n--- passage 5 ---\n[CF art. 7º XXIX] (precedentes_vinculantes)\n[CF art. 7º XXIX] Constitutional limitation period\nStatus: in force\nCross-refs: [CLT art. 11]\nSão direitos dos trabalhadores urbanos e rurais: ação, quanto aos créditos resultantes das relações\nde trabalho, com prazo prescricional de **cinco anos** para os trabalhadores urbanos e rurais, **até\no limite de dois anos após a extinção do contrato de trabalho**.\n\n--- passage 6 ---\n[CLT art. 791-A §4º] (clt_excerpts)\n[CLT art. 791-A §4º] Loser-pays attorney fees against a legal-aid beneficiary\nStatus: in force, but **partially unconstitutional**\nCross-refs: [STF ADI 5766], [CLT art. 790-B]\nVencido o beneficiário da justiça gratuita, as obrigações decorrentes de sua sucumbência ficarão sob\ncondição suspensiva de exigibilidade. Os honorários de sucumbência são fixados entre cinco e quinze\npor cento sobre o valor que resultar da liquidação da sentença.\n\nFATOS:\nEm ação trabalhista, restou provado assédio moral gravíssimo e reiterado, com exposição pública e humilhação da empregada ao longo de três anos, resultando em incapacidade laboral temporária. O salário contratual da ofendida era de R$ 1.600,00. O juízo entendeu que a reparação adequada, considerando a gravidade concreta do dano e o porte econômico da empresa — um grupo com faturamento bilionário —, seria de R$ 150.000,00. A empresa recorre sustentando que o art. 223-G, § 1º, IV, da CLT limita a condenação a cinquenta vezes o salário contratual, ou seja, R$ 80.000,00.\n\nPERGUNTA:\nO valor arbitrado pode ultrapassar o limite do art. 223-G, § 1º, IV, da CLT?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou are given a set of passages retrieved from the corpus. Answer from those passages alone.\n\nIf the retrieved passages are not sufficient to settle the question — for instance because they\npoint to a provision you were not given — say so explicitly in your answer rather than guessing.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Sim, o valor arbitrado pode ultrapassar o limite de cinquenta vezes o salário contratual previsto no art. 223-G, § 1º, IV, da CLT. O Supremo Tribunal Federal, ao julgar a ADI 6050 com eficácia vinculante, conferiu interpretação conforme a Constituição ao referido dispositivo, estabelecendo que os valores e faixas legais funcionam apenas como parâmetros orientativos para a quantificação da indenização, e não como teto absoluto. Dessa forma, é lícito ao magistrado arbitrar montante superior, desde que de maneira fundamentada e em observância aos princípios da proporcionalidade, da razoabilidade e da reparação integral, considerando a gravidade concreta da lesão e o poder econômico do ofensor.\",\n  \"citations\": [\n    \"CLT art. 223-G §1º\",\n    \"STF ADI 6050\"\n  ],\n  \"reasoning\": \"O art. 223-G, § 1º, da CLT foi objeto de controle concentrado de constitucionalidade na ADI 6050 pelo STF. A decisão vinculante fixou que a tarifação do dano extrapatrimonial não é teto taxativo, autorizando a superação justificada dos limites legais, o que torna infundada a tese recursal da empresa.\"\n}",
+ "parsed": {
+  "answer": "Sim, o valor arbitrado pode ultrapassar o limite de cinquenta vezes o salário contratual previsto no art. 223-G, § 1º, IV, da CLT. O Supremo Tribunal Federal, ao julgar a ADI 6050 com eficácia vinculante, conferiu interpretação conforme a Constituição ao referido dispositivo, estabelecendo que os valores e faixas legais funcionam apenas como parâmetros orientativos para a quantificação da indenização, e não como teto absoluto. Dessa forma, é lícito ao magistrado arbitrar montante superior, desde que de maneira fundamentada e em observância aos princípios da proporcionalidade, da razoabilidade e da reparação integral, considerando a gravidade concreta da lesão e o poder econômico do ofensor.",
+  "citations": [
+   "CLT art. 223-G §1º",
+   "STF ADI 6050"
+  ],
+  "reasoning": "O art. 223-G, § 1º, da CLT foi objeto de controle concentrado de constitucionalidade na ADI 6050 pelo STF. A decisão vinculante fixou que a tarifação do dano extrapatrimonial não é teto taxativo, autorizando a superação justificada dos limites legais, o que torna infundada a tese recursal da empresa."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1934,
+  "output_tokens": 304,
+  "thought_tokens": 473,
+  "total_tokens": 2711
+ },
+ "finish_reason": "FinishReason.STOP"
+}

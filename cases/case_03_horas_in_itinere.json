@@ -1,0 +1,43 @@
+{
+  "id": "case_03_horas_in_itinere",
+  "title": "Commuting time on a contract straddling the 2017 reform",
+  "reasoning_type": "temporal_split",
+  "difficulty": "hard",
+  "note": "Requires splitting the contract at 11 Nov 2017 and applying opposite rules to each half. A single-shot retrieval answer almost always picks one regime for the whole period.",
+  "facts": "Joana foi admitida em 10 de março de 2015 em uma fábrica situada em zona rural, não servida por transporte público regular. A empresa sempre forneceu ônibus fretado para o deslocamento dos empregados, gastando-se 50 minutos na ida e 50 minutos na volta. O contrato foi encerrado por dispensa sem justa causa em 31 de agosto de 2021. Joana pede o cômputo de todo o tempo de percurso como jornada de trabalho, ao longo de todo o contrato.",
+  "question": "O tempo de deslocamento deve ser computado na jornada? Em relação a qual período?",
+  "gold": {
+    "answer": "O contrato deve ser dividido em dois períodos pela data de vigência da Lei 13.467/2017 (11/11/2017). De 10/03/2015 a 10/11/2017, aplica-se a Súmula 90, I, do TST: o local é de difícil acesso e não servido por transporte público regular, e o transporte era fornecido pelo empregador, de modo que as 100 minutos diários são computáveis na jornada, gerando horas extras se ultrapassada a jornada normal. De 11/11/2017 até 31/08/2021, aplica-se a nova redação do art. 58, § 2º, da CLT: o tempo de deslocamento não é computado na jornada, ainda que em transporte fornecido pelo empregador. O pedido, portanto, é parcialmente procedente.",
+    "required_citations": [
+      "Súmula 90 TST",
+      "CLT art. 58 §2º",
+      "Lei 13.467/2017 vigência"
+    ],
+    "supporting_citations": [
+      "CLT art. 11"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Splits the contract into two periods at 11 Nov 2017.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Grants commuting time for the pre-reform period under Súmula 90 TST.",
+        "weight": 2
+      },
+      {
+        "id": "r3",
+        "claim": "Denies commuting time for the post-reform period under the new art. 58 §2º.",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Concludes the claim is partially granted rather than fully granted or fully denied.",
+        "weight": 1
+      }
+    ]
+  }
+}

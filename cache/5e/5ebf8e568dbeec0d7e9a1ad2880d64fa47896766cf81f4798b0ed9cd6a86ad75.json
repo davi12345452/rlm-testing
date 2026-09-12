@@ -1,0 +1,96 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nA convenção coletiva da categoria de João, vigente de 2018 a 2019, previa auxílio-alimentação mensal de R$ 500,00. Expirado o prazo de vigência do instrumento em dezembro de 2019 e não celebrado novo acordo, a empresa suprimiu o benefício a partir de janeiro de 2020. João ajuizou ação em 2022 pedindo o restabelecimento do auxílio, sustentando que a cláusula normativa aderiu ao seu contrato individual de trabalho e só poderia ser suprimida por nova negociação coletiva.\n\nQUESTION:\nA cláusula normativa expirada continua produzindo efeitos no contrato individual de João?\n\nREFERENCE ANSWER (gold):\nNão. Embora a Súmula 277 do TST afirmasse que as cláusulas normativas integram os contratos individuais e só poderiam ser modificadas ou suprimidas mediante negociação coletiva, o STF, na ADPF 323, declarou a inconstitucionalidade da ultratividade das normas coletivas, fixando que tais cláusulas não aderem definitivamente aos contratos individuais. Expirado o prazo de vigência do instrumento sem novo acordo, a cláusula deixa de produzir efeitos, salvo se houver fundamento jurídico autônomo para sua incorporação. O pedido de restabelecimento é improcedente.\n\nRUBRIC:\n- r1 (weight 3): Concludes the expired clause does NOT survive in the individual contract.\n- r2 (weight 3): Grounds this in ADPF 323 / the unconstitutionality of ultra-activity.\n- r3 (weight 2): Explicitly addresses Súmula 277 TST and explains that it cannot be applied.\n\nCANDIDATE ANSWER TO GRADE:\nNão. A cláusula normativa expirada não continua produzindo efeitos no contrato individual de trabalho de João. A legislação trabalhista veda expressamente o princípio da ultratividade de acordos e convenções coletivas, de modo que as condições e benefícios instituídos por instrumento coletivo extinguem-se com o término de seu prazo de vigência, não se integrando em definitivo aos contratos individuais de trabalho. Além da previsão legal expressa da Reforma Trabalhista, o Supremo Tribunal Federal declarou inconstitucional a Súmula 277 do TST, confirmando a impossibilidade de ultratividade das cláusulas coletivas.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 614, § 3º, STF ADPF 323\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states that the expired normative clause does not continue to produce effects in João's individual employment contract.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate grounds the conclusion in the unconstitutionality of ultra-activity as declared by the STF, and cites ADPF 323 in the citations.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly mentions Súmula 277 of the TST and explains that it was declared unconstitutional by the STF, thus it cannot be applied.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states that the expired normative clause does not continue to produce effects in João's individual employment contract."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate grounds the conclusion in the unconstitutionality of ultra-activity as declared by the STF, and cites ADPF 323 in the citations."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate explicitly mentions Súmula 277 of the TST and explains that it was declared unconstitutional by the STF, thus it cannot be applied."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 729,
+  "output_tokens": 214,
+  "thought_tokens": 443,
+  "total_tokens": 1386
+ },
+ "finish_reason": "FinishReason.STOP"
+}

@@ -1,0 +1,84 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nJoana foi admitida em 10 de março de 2015 em uma fábrica situada em zona rural, não servida por transporte público regular. A empresa sempre forneceu ônibus fretado para o deslocamento dos empregados, gastando-se 50 minutos na ida e 50 minutos na volta. O contrato foi encerrado por dispensa sem justa causa em 31 de agosto de 2021. Joana pede o cômputo de todo o tempo de percurso como jornada de trabalho, ao longo de todo o contrato.\n\nPERGUNTA:\nO tempo de deslocamento deve ser computado na jornada? Em relação a qual período?\n\nWHAT YOU HAVE DONE SO FAR:\nTHOUGHT: Let's list the documents in the corpus to see what statutes and súmulas are available.\nACTION: list_documents()\nOBSERVATION:\nDocuments in the corpus:\n- clt_excerpts: Consolidação das Leis do Trabalho (CLT) — Curated Excerpts (22 sections)\n- precedentes_vinculantes: Overriding Norms: Constitutional Rulings and Transitional Rules (7 sections)\n- sumulas_tst: Súmulas do Tribunal Superior do Trabalho (TST) — Curated Excerpts (16 sections)\n\nTHOUGHT: I need to check the available sections in clt_excerpts regarding working hours and travel time (horas in itinere).\nACTION: outline(doc_id='clt_excerpts')\nOBSERVATION:\n# clt_excerpts\n  [CLT art. 2º] Employer, economic group and group liability — status: in force (as amended by Lei 13.467/2017)\n  [CLT art. 3º] Definition of employee — status: in force\n  [CLT art. 11] Limitation period (prescrição) — status: in force\n  [CLT art. 58 §1º] Residual minutes at the time clock — status: in force\n  [CLT art. 58 §2º] Commuting time (horas in itinere) — post-reform wording — status: in force since 11 Nov 2017 (Lei 13.467/2017). **Displaces** the prior case law for\n  [CLT art. 59] Overtime and hour-banking — status: in force (as amended by Lei 13.467/2017)\n  [CLT art. 59-A] The 12x36 shift — status: in force since 11 Nov 2017\n  [CLT art. 62] Workers outside the working-hours regime — status: in force (item III added by Lei 13.467/2017)\n  [CLT art. 71] Intra-shift rest break — status: in force; § 4º has post-reform wording since 11 Nov 2017\n  [CLT art. 74 §2º] Mandatory time records — status: in force (threshold raised from 10 to 20 employees by Lei 13.467/2017)\n  [CLT art. 223-G §1º] Damages for non-pecuniary harm — statutory bands — status: in force, but **read down** by the Supreme Court\n  [CLT art. 442-B] The contracted self-employed worker — status: in force since 11 Nov 2017\n  [CLT art. 468] Contract amendment and reversal from a position of trust — status: in force; § 2º added by Lei 13.467/2017\n  [CLT art. 477 §6º e §8º] Severance payment deadline and penalty — status: in force\n  [CLT art. 482] Just cause attributable to the employee — status: in force\n  [CLT art. 483] Constructive dismissal (rescisão indireta) — status: in force\n  [CLT art. 487] Notice period (aviso prévio) — status: in force; proportionality governed by Lei 12.506/2011\n  [CLT art. 611-A] Collective bargaining prevailing over statute — status: in force since 11 Nov 2017\n  [CLT art. 611-B] Matters excluded from collective bargaining — status: in force since 11 Nov 2017\n  [CLT art. 790-B] Expert-witness fees and legal aid — status: in force, but **partially unconstitutional**\n  [CLT art. 791-A §4º] Loser-pays attorney fees against a legal-aid beneficiary — status: in force, but **partially unconstitutional**\n  [CLT art. 818] Burden of proof — status: in force (as amended by Lei 13.467/2017)\n\nTHOUGHT: I should read CLT art. 58 §2º to check the post-reform wording and its validity notes, then check Súmula 90 in sumulas_tst.\nACTION: read(key='CLT art. 58 §2º')\nOBSERVATION:\n--- clt_excerpts (lines 60-73) ---\n[CLT art. 58 §2º] Commuting time (horas in itinere) — post-reform wording\nStatus: in force since 11 Nov 2017 (Lei 13.467/2017). **Displaces** the prior case law for\nCross-refs: [Súmula 90 TST], [Lei 13.467/2017 vigência]\ncontracts and periods after that date.\n\nO tempo despendido pelo empregado desde a sua residência até a efetiva ocupação do posto de trabalho\ne para o seu retorno, caminhando ou por qualquer meio de transporte, inclusive o fornecido pelo\nempregador, não será computado na jornada de trabalho, por não ser tempo à disposição do empregador.\n\n> **Temporal note.** Before 11 Nov 2017 the opposite rule applied (old art. 58 §2º plus\n> [Súmula 90 TST]): commuting on employer-provided transport to a site that was hard to reach or\n> unserved by public transport *was* counted as working time. Contracts straddling that date must be\n> split into two periods.\n\nTHOUGHT: Let's read [Súmula 90 TST] and check [Lei 13.467/2017 vigência] to confirm the exact terms, requirements, and transitional rules.\nACTION: read(key='Súmula 90 TST')\nOBSERVATION:\n--- sumulas_tst (lines 42-55) ---\n[Súmula 90 TST] Commuting time (horas in itinere) — pre-reform rule\nStatus: **superseded for facts on or after 11 Nov 2017** by the new wording of\nCross-refs: [CLT art. 58 §2º], [Lei 13.467/2017 vigência]\n[CLT art. 58 §2º]. Still governs earlier periods.\n\nI — O tempo despendido pelo empregado, em condução fornecida pelo empregador, até o local de trabalho\nde difícil acesso ou não servido por transporte público regular, e para o seu retorno, é computável\nna jornada de trabalho.\n\nII — A incompatibilidade entre os horários de início e término da jornada do empregado e os do\ntransporte público regular é circunstância que também gera o direito às horas in itinere.\n\nIII — A mera insuficiência de transporte público não enseja o pagamento de horas in itinere.\n\nActions remaining before you are forced to answer: 8.",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou do not receive the corpus. You explore it, one action per turn, using these tools:\n\nlist_documents()            -> the documents in the corpus\noutline(doc_id=\"\")          -> every section key, title and validity status (cheap, start here)\ngrep(pattern, doc_id=\"\")    -> case-insensitive regex over section text, returns keys + snippets\nread(key)                   -> the full text of one section, by its citation key\nfollow(key)                 -> the sections cross-referenced by a section, with their status\n\nplus two control actions:\n\nspawn(sub_question, focus_keys=[])  -> run a fresh copy of yourself on a self-contained\n                                       sub-question, starting from the given section keys. It\n                                       explores on its own and returns a short conclusion with\n                                       citations. Use it when a sub-problem would otherwise force\n                                       you to read several long sections you do not need in full.\nfinish(citations)                  -> stop investigating. You will then be asked to write the\n                                       final answer from your transcript, so finish only once you\n                                       can support every part of it from sections you have read.\n\nHow to work:\n- Start with outline() to see every section key and its validity status. It is cheap and it is the\n  map. Do not grep blindly before you have seen the map.\n- When a section looks relevant, read() it, then follow() it. A cross-reference is the corpus\n  telling you that another provision modifies or completes this one; ignoring it is how you get a\n  confidently wrong answer.\n- Delegate with spawn when a sub-question is separable, for example one period of a contract that\n  straddles a legal reform.\n- Do not finish while an unread cross-reference could change the outcome.\n\nReturn exactly one action per turn, as JSON matching the schema. Fill only the fields that action\nneeds.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "thought": {
+     "type": "string",
+     "description": "One or two sentences: what you now know and what you still need."
+    },
+    "action": {
+     "type": "string",
+     "enum": [
+      "list_documents",
+      "outline",
+      "grep",
+      "read",
+      "follow",
+      "spawn",
+      "finish"
+     ]
+    },
+    "doc_id": {
+     "type": "string",
+     "description": "Argument for outline/grep."
+    },
+    "pattern": {
+     "type": "string",
+     "description": "Argument for grep."
+    },
+    "key": {
+     "type": "string",
+     "description": "Argument for read/follow."
+    },
+    "sub_question": {
+     "type": "string",
+     "description": "Argument for spawn."
+    },
+    "focus_keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for spawn: section keys the sub-agent should start from."
+    },
+    "answer": {
+     "type": "string",
+     "description": "REQUIRED when action is finish: the complete legal answer in Brazilian Portuguese. Never finish with this field empty."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for finish: exact corpus citation keys."
+    }
+   },
+   "required": [
+    "thought",
+    "action"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"thought\": \"I should read Lei 13.467/2017 vigência to ensure full clarity on how contracts spanning the reform are treated temporally.\",\n  \"action\": \"read\",\n  \"key\": \"Lei 13.467/2017 vigência\"\n}",
+ "parsed": {
+  "thought": "I should read Lei 13.467/2017 vigência to ensure full clarity on how contracts spanning the reform are treated temporally.",
+  "action": "read",
+  "key": "Lei 13.467/2017 vigência"
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 2521,
+  "output_tokens": 71,
+  "thought_tokens": 43,
+  "total_tokens": 2635
+ },
+ "finish_reason": "FinishReason.STOP"
+}

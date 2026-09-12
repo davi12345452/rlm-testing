@@ -1,0 +1,96 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nCarlos exerceu função de confiança de coordenador de equipe, recebendo gratificação de função de 40% sobre o salário-base, de junho de 2009 a setembro de 2021 — mais de doze anos ininterruptos. Em outubro de 2021, sem que lhe fosse imputada qualquer falta, a empresa o reverteu ao cargo efetivo de analista e suprimiu integralmente a gratificação. Carlos pede a manutenção do pagamento da gratificação, invocando estabilidade financeira.\n\nQUESTION:\nCarlos tem direito à manutenção da gratificação de função após a reversão?\n\nREFERENCE ANSWER (gold):\nNão. Embora a Súmula 372, I, do TST assegurasse a manutenção da gratificação percebida por dez anos ou mais, o art. 468, § 2º, da CLT, incluído pela Lei 13.467/2017 e vigente desde 11/11/2017, dispõe expressamente que a reversão ao cargo efetivo não assegura o direito à manutenção do pagamento da gratificação, que não se incorpora ao salário, independentemente do tempo de exercício da função. Como a reversão ocorreu em outubro de 2021, já sob a vigência da nova regra, prevalece o texto legal e o pedido é improcedente.\n\nRUBRIC:\n- r1 (weight 3): Concludes that Carlos is NOT entitled to keep the bonus.\n- r2 (weight 3): Grounds the denial in art. 468 §2º of the CLT.\n- r3 (weight 2): Explicitly addresses Súmula 372 TST and explains why it does not govern (reversal occurred after 11 Nov 2017).\n\nCANDIDATE ANSWER TO GRADE:\nCarlos não tem direito à manutenção da gratificação de função. Embora a Súmula 372, I, do TST assegurasse a estabilidade financeira ao empregado que recebesse gratificação de função por dez ou mais anos, a Lei 13.467/2017 (Reforma Trabalhista) introduziu o § 2º ao art. 468 da CLT, o qual veda expressamente a incorporação da gratificação, independentemente do tempo de exercício da função de confiança. Conforme pacífica jurisprudência do Tribunal Superior do Trabalho, a incorporação fundada na Súmula 372 só se aplica àqueles que completaram o decênio antes da vigência da Lei 13.467/2017 (11/11/2017), resguardando o direito adquirido. Como Carlos exerceu a função a partir de junho de 2009, contava com aproximadamente 8 anos e 5 meses em novembro de 2017, detendo mera expectativa de direito. Logo, a reversão ao cargo efetivo sem manutenção do valor é válida.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 468, § 1º, CLT art. 468, § 2º, Súmula 372, I, TST, CF art. 5º, XXXVI\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states 'Carlos não tem direito à manutenção da gratificação de função', concluding that he is not entitled to keep the bonus.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate grounds the denial in the correct legal provision, stating that the labor reform introduced '§ 2º ao art. 468 da CLT, o qual veda expressamente a incorporação da gratificação'.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly addresses Súmula 372, I, of the TST and explains that it does not apply because Carlos had not completed the required 10 years before the new law came into effect on 11/11/2017.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states 'Carlos não tem direito à manutenção da gratificação de função', concluding that he is not entitled to keep the bonus."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate grounds the denial in the correct legal provision, stating that the labor reform introduced '§ 2º ao art. 468 da CLT, o qual veda expressamente a incorporação da gratificação'."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate explicitly addresses Súmula 372, I, of the TST and explains that it does not apply because Carlos had not completed the required 10 years before the new law came into effect on 11/11/2017."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 888,
+  "output_tokens": 253,
+  "thought_tokens": 686,
+  "total_tokens": 1827
+ },
+ "finish_reason": "FinishReason.STOP"
+}

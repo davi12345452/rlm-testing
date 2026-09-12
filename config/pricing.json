@@ -1,0 +1,11 @@
+{
+  "_comment": [
+    "Optional. USD per 1M tokens, used only to print an estimated cost alongside the exact token",
+    "counts. Token counts are the primary cost metric in this benchmark because they are measured",
+    "rather than looked up; published prices change, and a stale hardcoded number is worse than no",
+    "number. Fill in the models you use and the report will include a cost estimate.",
+    "Thinking tokens are billed as output tokens."
+  ],
+  "as_of": null,
+  "models": {}
+}

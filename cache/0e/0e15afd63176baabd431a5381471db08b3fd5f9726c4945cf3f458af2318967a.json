@@ -1,0 +1,54 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nLuciana, beneficiária da justiça gratuita, ajuizou reclamação com pedido de adicional de insalubridade. Realizada perícia técnica, o laudo concluiu pela inexistência de agente insalubre, e o pedido foi julgado improcedente nesse ponto. Os demais pedidos foram acolhidos e Luciana obteve crédito líquido de R$ 40.000,00 na mesma ação. Os honorários periciais foram arbitrados em R$ 3.500,00, e a sentença determinou seu desconto direto do crédito obtido por Luciana.\n\nPERGUNTA:\nÉ válido o desconto dos honorários periciais do crédito obtido por Luciana na própria ação?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Não é válido o desconto dos honorários periciais dos créditos obtidos por Luciana. O Supremo Tribunal Federal, no julgamento da ADI 5766, declarou a inconstitucionalidade da expressão 'ainda que beneficiária da justiça gratuita' constante do caput do art. 790-B da CLT, bem como do seu § 4º, que autorizava a dedução dos honorários periciais de créditos obtidos em juízo pelo beneficiário da gratuidade de justiça. Desse modo, comprovada e deferida a concessão da justiça gratuita à trabalhadora, a responsabilidade pelo pagamento dos honorários periciais não pode recair sobre os créditos por ela auferidos na demanda, devendo a despesa ser custeada pela União.\",\n  \"citations\": [\n    \"CLT art. 790-B\",\n    \"STF ADI 5766\",\n    \"Súmula 457 TST\"\n  ],\n  \"reasoning\": \"A redação do art. 790-B, caput e § 4º, conferida pela Reforma Trabalhista (Lei 13.467/2017), admitia a responsabilização e a cobrança dos honorários periciais sobre os créditos obtidos em juízo pelo beneficiário da justiça gratuita. Contudo, o STF, na ADI 5766, expurgou essa possibilidade por violação ao princípio do acesso à justiça e à assistência judiciária integral e gratuita (art. 5º, LXXIV, da CF/88), recaindo o encargo sobre a União conforme a Súmula 457 do TST.\"\n}",
+ "parsed": {
+  "answer": "Não é válido o desconto dos honorários periciais dos créditos obtidos por Luciana. O Supremo Tribunal Federal, no julgamento da ADI 5766, declarou a inconstitucionalidade da expressão 'ainda que beneficiária da justiça gratuita' constante do caput do art. 790-B da CLT, bem como do seu § 4º, que autorizava a dedução dos honorários periciais de créditos obtidos em juízo pelo beneficiário da gratuidade de justiça. Desse modo, comprovada e deferida a concessão da justiça gratuita à trabalhadora, a responsabilidade pelo pagamento dos honorários periciais não pode recair sobre os créditos por ela auferidos na demanda, devendo a despesa ser custeada pela União.",
+  "citations": [
+   "CLT art. 790-B",
+   "STF ADI 5766",
+   "Súmula 457 TST"
+  ],
+  "reasoning": "A redação do art. 790-B, caput e § 4º, conferida pela Reforma Trabalhista (Lei 13.467/2017), admitia a responsabilização e a cobrança dos honorários periciais sobre os créditos obtidos em juízo pelo beneficiário da justiça gratuita. Contudo, o STF, na ADI 5766, expurgou essa possibilidade por violação ao princípio do acesso à justiça e à assistência judiciária integral e gratuita (art. 5º, LXXIV, da CF/88), recaindo o encargo sobre a União conforme a Súmula 457 do TST."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 514,
+  "output_tokens": 381,
+  "thought_tokens": 465,
+  "total_tokens": 1360
+ },
+ "finish_reason": "FinishReason.STOP"
+}

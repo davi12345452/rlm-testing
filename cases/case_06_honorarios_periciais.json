@@ -1,0 +1,42 @@
+{
+  "id": "case_06_honorarios_periciais",
+  "title": "Expert fees charged against a legal-aid beneficiary's award",
+  "reasoning_type": "constitutional_override",
+  "difficulty": "hard",
+  "note": "Art. 790-B read literally answers the question and is the top retrieval hit. ADI 5766 struck down exactly that reading and shares almost no vocabulary with the facts.",
+  "facts": "Luciana, beneficiária da justiça gratuita, ajuizou reclamação com pedido de adicional de insalubridade. Realizada perícia técnica, o laudo concluiu pela inexistência de agente insalubre, e o pedido foi julgado improcedente nesse ponto. Os demais pedidos foram acolhidos e Luciana obteve crédito líquido de R$ 40.000,00 na mesma ação. Os honorários periciais foram arbitrados em R$ 3.500,00, e a sentença determinou seu desconto direto do crédito obtido por Luciana.",
+  "question": "É válido o desconto dos honorários periciais do crédito obtido por Luciana na própria ação?",
+  "gold": {
+    "answer": "Não. Embora o art. 790-B, caput, da CLT atribua os honorários periciais à parte sucumbente na pretensão objeto da perícia ainda que beneficiária da justiça gratuita, o STF, no julgamento da ADI 5766, declarou inconstitucional exatamente o mecanismo que permitia cobrar tais encargos com os créditos obtidos pelo beneficiário no próprio processo ou em outro processo. Logo, o desconto determinado na sentença não pode subsistir. A obrigação permanece sob condição suspensiva de exigibilidade e o encargo pericial recai sobre a União, na forma da regulamentação aplicável.",
+    "required_citations": [
+      "STF ADI 5766",
+      "CLT art. 790-B"
+    ],
+    "supporting_citations": [
+      "CLT art. 791-A §4º"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes the deduction from her award is INVALID.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Grounds this in the Supreme Court ruling ADI 5766.",
+        "weight": 3
+      },
+      {
+        "id": "r3",
+        "claim": "Does not simply apply art. 790-B literally to uphold the deduction.",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Mentions that the obligation stays suspended / falls on the Union rather than vanishing outright.",
+        "weight": 1
+      }
+    ]
+  }
+}

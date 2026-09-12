@@ -1,0 +1,37 @@
+{
+  "id": "case_09_ultratividade",
+  "title": "An expired collective clause and the ultra-activity question",
+  "reasoning_type": "constitutional_override",
+  "difficulty": "medium",
+  "note": "Súmula 277 answers the question directly and in the claimant's favour. ADPF 323 nullifies it.",
+  "facts": "A convenção coletiva da categoria de João, vigente de 2018 a 2019, previa auxílio-alimentação mensal de R$ 500,00. Expirado o prazo de vigência do instrumento em dezembro de 2019 e não celebrado novo acordo, a empresa suprimiu o benefício a partir de janeiro de 2020. João ajuizou ação em 2022 pedindo o restabelecimento do auxílio, sustentando que a cláusula normativa aderiu ao seu contrato individual de trabalho e só poderia ser suprimida por nova negociação coletiva.",
+  "question": "A cláusula normativa expirada continua produzindo efeitos no contrato individual de João?",
+  "gold": {
+    "answer": "Não. Embora a Súmula 277 do TST afirmasse que as cláusulas normativas integram os contratos individuais e só poderiam ser modificadas ou suprimidas mediante negociação coletiva, o STF, na ADPF 323, declarou a inconstitucionalidade da ultratividade das normas coletivas, fixando que tais cláusulas não aderem definitivamente aos contratos individuais. Expirado o prazo de vigência do instrumento sem novo acordo, a cláusula deixa de produzir efeitos, salvo se houver fundamento jurídico autônomo para sua incorporação. O pedido de restabelecimento é improcedente.",
+    "required_citations": [
+      "STF ADPF 323",
+      "Súmula 277 TST"
+    ],
+    "supporting_citations": [
+      "CLT art. 611-A"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes the expired clause does NOT survive in the individual contract.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Grounds this in ADPF 323 / the unconstitutionality of ultra-activity.",
+        "weight": 3
+      },
+      {
+        "id": "r3",
+        "claim": "Explicitly addresses Súmula 277 TST and explains that it cannot be applied.",
+        "weight": 2
+      }
+    ]
+  }
+}

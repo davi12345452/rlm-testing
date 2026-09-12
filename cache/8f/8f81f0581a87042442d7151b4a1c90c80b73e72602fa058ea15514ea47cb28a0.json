@@ -1,0 +1,52 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nRafael foi contratado em janeiro de 2021 como operador de produção, com jornada de 8 horas diárias. Durante todo o contrato, encerrado em dezembro de 2023, a empresa concedeu apenas 30 minutos de intervalo para repouso e alimentação, em vez dos 60 minutos mínimos. Os controles de ponto juntados aos autos confirmam a concessão parcial. Rafael pede o pagamento do intervalo e a repercussão do valor em férias, 13º salário e FGTS.\n\nPERGUNTA:\nQuantos minutos por dia devem ser pagos, com qual acréscimo, e a parcela repercute nas demais verbas?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Devem ser pagos apenas 30 minutos diários (correspondentes exclusivamente ao período suprimido do intervalo intrajornada), com acréscimo de 50% sobre o valor da remuneração da hora normal de trabalho. A parcela não gera reflexos nem repercute sobre férias, 13º salário, FGTS ou qualquer outra verba, em razão de sua natureza estritamente indenizatória.\",\n  \"citations\": [\n    \"CLT art. 71, § 4º\"\n  ],\n  \"reasoning\": \"Como todo o contrato de trabalho transcorreu após a vigência da Lei nº 13.467/2017 (Reforma Trabalhista), aplica-se a redação atual do art. 71, § 4º, da CLT. O texto legal expressamente superou o entendimento anterior consolidado na Súmula 437 do TST, determinando a indenização apenas do tempo suprimido (30 minutos) e fixando expressamente a natureza indenizatória da parcela, o que veda qualquer reflexo.\"\n}",
+ "parsed": {
+  "answer": "Devem ser pagos apenas 30 minutos diários (correspondentes exclusivamente ao período suprimido do intervalo intrajornada), com acréscimo de 50% sobre o valor da remuneração da hora normal de trabalho. A parcela não gera reflexos nem repercute sobre férias, 13º salário, FGTS ou qualquer outra verba, em razão de sua natureza estritamente indenizatória.",
+  "citations": [
+   "CLT art. 71, § 4º"
+  ],
+  "reasoning": "Como todo o contrato de trabalho transcorreu após a vigência da Lei nº 13.467/2017 (Reforma Trabalhista), aplica-se a redação atual do art. 71, § 4º, da CLT. O texto legal expressamente superou o entendimento anterior consolidado na Súmula 437 do TST, determinando a indenização apenas do tempo suprimido (30 minutos) e fixando expressamente a natureza indenizatória da parcela, o que veda qualquer reflexo."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 503,
+  "output_tokens": 248,
+  "thought_tokens": 601,
+  "total_tokens": 1352
+ },
+ "finish_reason": "FinishReason.STOP"
+}

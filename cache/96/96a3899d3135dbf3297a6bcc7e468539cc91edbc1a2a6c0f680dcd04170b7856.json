@@ -1,0 +1,52 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "PASSAGENS RECUPERADAS:\n--- passage 1 ---\n[Súmula 277 TST] (sumulas_tst)\n[Súmula 277 TST] Ultra-activity of collective-bargaining clauses\nStatus: **inapplicable** — the underlying doctrine was held unconstitutional\nCross-refs: [STF ADPF 323], [CLT art. 611-A]\nAs cláusulas normativas dos acordos coletivos ou convenções coletivas integram os contratos\nindividuais de trabalho e somente poderão ser modificadas ou suprimidas mediante negociação coletiva\nde trabalho.\n\n> **Do not apply this súmula without reading [STF ADPF 323].** The Supreme Court held that\n> ultra-activity of collective norms has no constitutional basis; expired collective clauses do not\n> survive into individual contracts.\n\n--- passage 2 ---\n[Lei 13.467/2017 vigência] (precedentes_vinculantes)\n[Lei 13.467/2017 vigência] Commencement of the 2017 labour reform\nStatus: in force\nCross-refs: [CLT art. 71], [CLT art. 468], [CLT art. 58 §2º], [CLT art. 74 §2º], [Súmula 437 TST], [Súmula 372 TST], [Súmula 90 TST]\nA Lei 13.467/2017 (Reforma Trabalhista) foi publicada em 14 de julho de 2017 e entrou em vigor em\n**11 de novembro de 2017**, após o período de vacatio legis de 120 dias.\n\n**Operative rule for this corpus.** As alterações de direito material aplicam-se aos **fatos\nocorridos a partir de 11/11/2017**. Contratos iniciados antes dessa data e ainda vigentes depois\ndela devem ser analisados em **dois períodos distintos**: até 10/11/2017 aplica-se o regime anterior\n(inclusive as súmulas então vigentes); de 11/11/2017 em diante aplica-se a nova redação legal.\n\n> Whenever a case in this benchmark spans that date, the correct answer is almost always a\n> **split**, not a single regime.\n\n--- passage 3 ---\n[STF ADI 6050] (precedentes_vinculantes)\n[STF ADI 6050] Statutory bands for non-pecuniary damages\nStatus: binding, with general effect\nCross-refs: [CLT art. 223-G §1º]\nO Supremo Tribunal Federal deu **interpretação conforme a Constituição** aos incisos do art. 223-G,\n§ 1º, da CLT, fixando que os critérios de quantificação ali previstos constituem **parâmetros\norientativos** para a fixação da indenização por dano extrapatrimonial.\n\n**Operative rule.** Os valores indicados **não funcionam como teto absoluto**. O juiz pode arbitrar\nindenização superior ao limite do inciso aplicável, desde que o faça de forma fundamentada,\nobservados os princípios da razoabilidade, da proporcionalidade e da reparação integral, e\nconsiderando a gravidade concreta do dano e a capacidade econômica do ofensor.\n\n--- passage 4 ---\n[CF art. 7º XXIX] (precedentes_vinculantes)\n[CF art. 7º XXIX] Constitutional limitation period\nStatus: in force\nCross-refs: [CLT art. 11]\nSão direitos dos trabalhadores urbanos e rurais: ação, quanto aos créditos resultantes das relações\nde trabalho, com prazo prescricional de **cinco anos** para os trabalhadores urbanos e rurais, **até\no limite de dois anos após a extinção do contrato de trabalho**.\n\n--- passage 5 ---\n[CLT art. 483] (clt_excerpts)\n[CLT art. 483] Constructive dismissal (rescisão indireta)\nStatus: in force\nCross-refs: [Súmula 13 TST], [CLT art. 477 §6º e §8º], [CLT art. 482]\nO empregado poderá considerar rescindido o contrato e pleitear a devida indenização quando:\n\na) forem exigidos serviços superiores às suas forças, defesos por lei, contrários aos bons costumes,\nou alheios ao contrato;\nb) for tratado pelo empregador ou por seus superiores hierárquicos com rigor excessivo;\nc) correr perigo manifesto de mal considerável;\nd) **não cumprir o empregador as obrigações do contrato**;\ne) praticar o empregador ou seus prepostos, contra ele ou pessoas de sua família, ato lesivo da honra\ne boa fama;\nf) o empregador ou seus prepostos ofenderem-no fisicamente, salvo em caso de legítima defesa;\ng) o empregador reduzir o seu trabalho, sendo este por peça ou tarefa, de forma a afetar\nsensivelmente a importância dos salários.\n\n§ 3º Nas hipóteses das letras **d** e **g**, poderá o empregado pleitear a rescisão de seu contrato\nde trabalho e o pagamento das respectivas indenizações, **permanecendo ou não no serviço até final\ndecisão do processo**.\n\n--- passage 6 ---\n[Súmula 437 TST] (sumulas_tst)\n[Súmula 437 TST] Intra-shift break — pre-reform rule\nStatus: **superseded for facts on or after 11 Nov 2017** by [CLT art. 71] § 4º.\nCross-refs: [CLT art. 71], [Lei 13.467/2017 vigência]\nStill governs earlier periods.\n\nI — Após a edição da Lei 8.923/94, a não concessão ou a concessão parcial do intervalo intrajornada\nmínimo para repouso e alimentação implica o pagamento **total do período correspondente**, e não\napenas daquele suprimido, com acréscimo de, no mínimo, 50% sobre o valor da remuneração da hora\nnormal de trabalho.\n\nIII — Possui **natureza salarial** a parcela prevista no art. 71, § 4º, da CLT, repercutindo, pois,\nno cálculo de outras parcelas.\n\n> **Temporal note.** Post-reform the statute reverses both points: only the suppressed portion is\n> owed, and its nature is indemnificatory (no integrations).\n\nFATOS:\nA convenção coletiva da categoria de João, vigente de 2018 a 2019, previa auxílio-alimentação mensal de R$ 500,00. Expirado o prazo de vigência do instrumento em dezembro de 2019 e não celebrado novo acordo, a empresa suprimiu o benefício a partir de janeiro de 2020. João ajuizou ação em 2022 pedindo o restabelecimento do auxílio, sustentando que a cláusula normativa aderiu ao seu contrato individual de trabalho e só poderia ser suprimida por nova negociação coletiva.\n\nPERGUNTA:\nA cláusula normativa expirada continua produzindo efeitos no contrato individual de João?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou are given a set of passages retrieved from the corpus. Answer from those passages alone.\n\nIf the retrieved passages are not sufficient to settle the question — for instance because they\npoint to a provision you were not given — say so explicitly in your answer rather than guessing.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Não. A cláusula normativa expirada não continua produzindo efeitos no contrato individual de trabalho de João. O Supremo Tribunal Federal, no julgamento da ADPF 323, declarou a inconstitucionalidade da ultratividade das normas coletivas de trabalho outrora preconizada na Súmula 277 do TST, assentando que cláusulas de acordos ou convenções coletivas não integram de forma definitiva os contratos individuais após expirado o prazo de vigência do instrumento normativo. Portanto, expirada a convenção em dezembro de 2019 e ausente nova negociação, a empresa agiu licitamente ao suprimir o benefício a partir de janeiro de 2020.\",\n  \"citations\": [\n    \"Súmula 277 TST\"\n  ],\n  \"reasoning\": \"A controvérsia gira em torno da ultratividade de norma coletiva. A tese de João fundamentava-se na redação da Súmula 277 do TST; contudo, tal entendimento restou superado e reputado inconstitucional pelo STF (ADPF 323), de modo que cláusulas coletivas com prazo expirado não aderem aos contratos individuais de trabalho.\"\n}",
+ "parsed": {
+  "answer": "Não. A cláusula normativa expirada não continua produzindo efeitos no contrato individual de trabalho de João. O Supremo Tribunal Federal, no julgamento da ADPF 323, declarou a inconstitucionalidade da ultratividade das normas coletivas de trabalho outrora preconizada na Súmula 277 do TST, assentando que cláusulas de acordos ou convenções coletivas não integram de forma definitiva os contratos individuais após expirado o prazo de vigência do instrumento normativo. Portanto, expirada a convenção em dezembro de 2019 e ausente nova negociação, a empresa agiu licitamente ao suprimir o benefício a partir de janeiro de 2020.",
+  "citations": [
+   "Súmula 277 TST"
+  ],
+  "reasoning": "A controvérsia gira em torno da ultratividade de norma coletiva. A tese de João fundamentava-se na redação da Súmula 277 do TST; contudo, tal entendimento restou superado e reputado inconstitucional pelo STF (ADPF 323), de modo que cláusulas coletivas com prazo expirado não aderem aos contratos individuais de trabalho."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 2044,
+  "output_tokens": 277,
+  "thought_tokens": 561,
+  "total_tokens": 2882
+ },
+ "finish_reason": "FinishReason.STOP"
+}

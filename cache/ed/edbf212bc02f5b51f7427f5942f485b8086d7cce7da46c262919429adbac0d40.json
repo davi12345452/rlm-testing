@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nEm ação trabalhista, restou provado assédio moral gravíssimo e reiterado, com exposição pública e humilhação da empregada ao longo de três anos, resultando em incapacidade laboral temporária. O salário contratual da ofendida era de R$ 1.600,00. O juízo entendeu que a reparação adequada, considerando a gravidade concreta do dano e o porte econômico da empresa — um grupo com faturamento bilionário —, seria de R$ 150.000,00. A empresa recorre sustentando que o art. 223-G, § 1º, IV, da CLT limita a condenação a cinquenta vezes o salário contratual, ou seja, R$ 80.000,00.\n\nQUESTION:\nO valor arbitrado pode ultrapassar o limite do art. 223-G, § 1º, IV, da CLT?\n\nREFERENCE ANSWER (gold):\nSim. O STF, na ADI 6050, deu interpretação conforme a Constituição ao art. 223-G, § 1º, da CLT, fixando que os parâmetros ali previstos são orientativos e não constituem teto absoluto. O juiz pode arbitrar indenização superior ao limite do inciso aplicável, desde que de forma fundamentada, observados os princípios da razoabilidade, da proporcionalidade e da reparação integral, considerando a gravidade concreta do dano e a capacidade econômica do ofensor. Como a sentença fundamentou o arbitramento na gravidade do assédio e no porte econômico do grupo, a condenação de R$ 150.000,00 pode ser mantida.\n\nRUBRIC:\n- r1 (weight 3): Concludes the award CAN exceed the statutory band.\n- r2 (weight 3): Grounds this in ADI 6050 / the interpretation-in-conformity given by the Supreme Court.\n- r3 (weight 2): Describes the bands as orienting parameters rather than binding caps.\n- r4 (weight 1): Notes the requirement of a reasoned decision (razoabilidade/proporcionalidade).\n\nCANDIDATE ANSWER TO GRADE:\nSim, o valor arbitrado pode ultrapassar o limite estabelecido no art. 223-G, § 1º, IV, da CLT. O Supremo Tribunal Federal, no julgamento da ADI 6050 com eficácia vinculante e erga omnes, conferiu interpretação conforme a Constituição ao referido dispositivo, fixando que os critérios de tarifação ali previstos operam como parâmetros meramente orientativos, e não como teto máximo absoluto. Dessa forma, é lícito ao magistrado arbitrar indenização superior a cinquenta vezes o salário contratual do ofendido, desde que o faça de maneira fundamentada, com base nos princípios da razoabilidade, da proporcionalidade e da reparação integral, levando em conta a gravidade concreta do ilícito e a capacidade econômica da empresa.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 223-G §1º, STF ADI 6050\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states 'Sim, o valor arbitrado pode ultrapassar o limite estabelecido no art. 223-G, § 1º, IV, da CLT', concluding that the award can exceed the statutory band.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate grounds the answer in the Supreme Court's decision, mentioning 'Supremo Tribunal Federal, no julgamento da ADI 6050... conferiu interpretação conforme a Constituição'.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate describes the bands as orienting parameters rather than binding caps by stating 'operam como parâmetros meramente orientativos, e não como teto máximo absoluto'.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate notes the requirement of a reasoned decision, mentioning 'desde que o faça de maneira fundamentada, com base nos princípios da razoabilidade, da proporcionalidade'.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states 'Sim, o valor arbitrado pode ultrapassar o limite estabelecido no art. 223-G, § 1º, IV, da CLT', concluding that the award can exceed the statutory band."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate grounds the answer in the Supreme Court's decision, mentioning 'Supremo Tribunal Federal, no julgamento da ADI 6050... conferiu interpretação conforme a Constituição'."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate describes the bands as orienting parameters rather than binding caps by stating 'operam como parâmetros meramente orientativos, e não como teto máximo absoluto'."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "The candidate notes the requirement of a reasoned decision, mentioning 'desde que o faça de maneira fundamentada, com base nos princípios da razoabilidade, da proporcionalidade'."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 864,
+  "output_tokens": 309,
+  "thought_tokens": 278,
+  "total_tokens": 1451
+ },
+ "finish_reason": "FinishReason.STOP"
+}

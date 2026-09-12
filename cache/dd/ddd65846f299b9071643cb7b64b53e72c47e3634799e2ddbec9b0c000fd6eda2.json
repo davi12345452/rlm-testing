@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nTiago, técnico de manutenção, recebeu da empresa um telefone celular corporativo e um notebook. Não havia escala de plantão, nem obrigação de permanecer em casa ou em local determinado fora do expediente, nem exigência de resposta imediata. Nos três anos de contrato, Tiago foi acionado fora do horário de trabalho em quatro ocasiões, todas efetivamente pagas como horas extras. Tiago pede o pagamento de sobreaviso correspondente a todo o período não trabalhado, à razão de um terço da hora normal.\n\nPERGUNTA:\nTiago tem direito ao adicional de sobreaviso pelo período em que portava o celular corporativo?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Tiago não tem direito ao adicional de sobreaviso. O mero fornecimento ou porte de instrumentos telemáticos ou informatizados da empresa (como celular e notebook) fora da jornada de trabalho, por si só, não caracteriza o regime de sobreaviso. Como Tiago não estava submetido a escala de plantão, não tinha restrição de sua liberdade de locomoção nem obrigação de resposta imediata, não resta configurado o controle patronal exigido para o deferimento da referida verba.\",\n  \"citations\": [\n    \"CLT art. 244, § 2º\",\n    \"Súmula 428 TST\"\n  ],\n  \"reasoning\": \"A controvérsia é expressamente pacificada pela Súmula 428, I, do TST, segundo a qual o uso de instrumentos telemáticos fornecidos pela empresa não basta para configurar o sobreaviso. Embora a jurisprudência admita a aplicação analógica do art. 244, § 2º, da CLT ao trabalhador que aguarda ordens à distância (Súmula 428, II, TST), os fatos demonstram ausência de regime de plantão, de controle patronal e de cerceamento de locomoção, de modo que os eventuais chamados já foram integralmente remunerados como horas extras.\"\n}",
+ "parsed": {
+  "answer": "Tiago não tem direito ao adicional de sobreaviso. O mero fornecimento ou porte de instrumentos telemáticos ou informatizados da empresa (como celular e notebook) fora da jornada de trabalho, por si só, não caracteriza o regime de sobreaviso. Como Tiago não estava submetido a escala de plantão, não tinha restrição de sua liberdade de locomoção nem obrigação de resposta imediata, não resta configurado o controle patronal exigido para o deferimento da referida verba.",
+  "citations": [
+   "CLT art. 244, § 2º",
+   "Súmula 428 TST"
+  ],
+  "reasoning": "A controvérsia é expressamente pacificada pela Súmula 428, I, do TST, segundo a qual o uso de instrumentos telemáticos fornecidos pela empresa não basta para configurar o sobreaviso. Embora a jurisprudência admita a aplicação analógica do art. 244, § 2º, da CLT ao trabalhador que aguarda ordens à distância (Súmula 428, II, TST), os fatos demonstram ausência de regime de plantão, de controle patronal e de cerceamento de locomoção, de modo que os eventuais chamados já foram integralmente remunerados como horas extras."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 497,
+  "output_tokens": 307,
+  "thought_tokens": 343,
+  "total_tokens": 1147
+ },
+ "finish_reason": "FinishReason.STOP"
+}

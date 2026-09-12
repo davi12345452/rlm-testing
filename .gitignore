@@ -1,4 +1,4 @@
-# Environment
+# Secrets
 .env
 *.env
 .env.*
@@ -8,7 +8,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
 .Python
 venv/
 env/
@@ -17,16 +16,17 @@ ENV/
 *.egg-info/
 dist/
 build/
+.pytest_cache/
 
-# Editors
+# Editors / OS
 .vscode/
 .idea/
 *.swp
 *.swo
 .DS_Store
 
-# Results / cache
-results/*.json
-results/*.csv
+# Scratch runs. The canonical run in results/latest/ IS committed, together with the response
+# cache in cache/, so that `make replay` reproduces the published numbers with no API key.
+results/*
 !results/.gitkeep
-.cache/
+!results/latest/

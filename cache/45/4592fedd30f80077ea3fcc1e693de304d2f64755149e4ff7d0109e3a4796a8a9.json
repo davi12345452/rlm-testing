@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nRafael foi contratado em janeiro de 2021 como operador de produção, com jornada de 8 horas diárias. Durante todo o contrato, encerrado em dezembro de 2023, a empresa concedeu apenas 30 minutos de intervalo para repouso e alimentação, em vez dos 60 minutos mínimos. Os controles de ponto juntados aos autos confirmam a concessão parcial. Rafael pede o pagamento do intervalo e a repercussão do valor em férias, 13º salário e FGTS.\n\nQUESTION:\nQuantos minutos por dia devem ser pagos, com qual acréscimo, e a parcela repercute nas demais verbas?\n\nREFERENCE ANSWER (gold):\nAplica-se o art. 71, § 4º, da CLT na redação da Lei 13.467/2017, vigente desde 11/11/2017 e portanto aplicável a todo o contrato (2021-2023). São devidos apenas os 30 minutos suprimidos por dia, com acréscimo de 50% sobre o valor da hora normal. A parcela tem natureza indenizatória e, por isso, NÃO repercute em férias, 13º salário ou FGTS. A Súmula 437 do TST, que determinava o pagamento do período integral com natureza salarial, está superada para fatos posteriores a 11/11/2017.\n\nRUBRIC:\n- r1 (weight 3): Awards only the suppressed 30 minutes, not the full 60-minute break.\n- r2 (weight 1): Applies the 50% surcharge over the normal hourly rate.\n- r3 (weight 2): Classifies the payment as indemnificatory, with NO repercussion on férias, 13º or FGTS.\n- r4 (weight 2): Explains that Súmula 437 TST is superseded for facts after 11 Nov 2017 (or otherwise justifies the temporal choice).\n\nCANDIDATE ANSWER TO GRADE:\nDevem ser pagos apenas 30 minutos diários (correspondentes exclusivamente ao período suprimido do intervalo intrajornada), com acréscimo de 50% sobre o valor da remuneração da hora normal de trabalho. A parcela não gera reflexos nem repercute sobre férias, 13º salário, FGTS ou qualquer outra verba, em razão de sua natureza estritamente indenizatória.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 71, § 4º\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states that only the 30 suppressed minutes should be paid.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly applies the 50% surcharge over the normal hourly rate.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate classifies the payment as strictly indemnificatory and states it does not reflect on férias, 13º salário, or FGTS.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"missed\",\n      \"justification\": \"The candidate does not mention Súmula 437 of the TST nor do they explain the temporal application of the labor reform (Lei 13.467/2017).\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states that only the 30 suppressed minutes should be paid."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate correctly applies the 50% surcharge over the normal hourly rate."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate classifies the payment as strictly indemnificatory and states it does not reflect on férias, 13º salário, or FGTS."
+   },
+   {
+    "id": "r4",
+    "verdict": "missed",
+    "justification": "The candidate does not mention Súmula 437 of the TST nor do they explain the temporal application of the labor reform (Lei 13.467/2017)."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 747,
+  "output_tokens": 259,
+  "thought_tokens": 622,
+  "total_tokens": 1628
+ },
+ "finish_reason": "FinishReason.STOP"
+}

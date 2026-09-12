@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nJoana foi admitida em 10 de março de 2015 em uma fábrica situada em zona rural, não servida por transporte público regular. A empresa sempre forneceu ônibus fretado para o deslocamento dos empregados, gastando-se 50 minutos na ida e 50 minutos na volta. O contrato foi encerrado por dispensa sem justa causa em 31 de agosto de 2021. Joana pede o cômputo de todo o tempo de percurso como jornada de trabalho, ao longo de todo o contrato.\n\nPERGUNTA:\nO tempo de deslocamento deve ser computado na jornada? Em relação a qual período?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"O tempo de deslocamento deve ser computado na jornada de trabalho apenas em relação ao período de 10 de março de 2015 até 10 de novembro de 2017. A partir de 11 de novembro de 2017 (entrada em vigor da Reforma Trabalhista, Lei nº 13.467/2017), o tempo de percurso não é mais considerado tempo à disposição do empregador e, portanto, não é computado na jornada de trabalho até a rescisão contratual em 31 de agosto de 2021 (ressalvada eventual pronúncia de prescrição quinquenal a contar do ajuizamento da ação).\",\n  \"citations\": [\n    \"CLT art. 58, § 2º\",\n    \"Súmula 90 TST\"\n  ],\n  \"reasoning\": \"Antes da vigência da Lei nº 13.467/2017, vigorava a antiga redação do art. 58, § 2º, da CLT e o entendimento da Súmula 90 do TST, segundo os quais o tempo despendido até local de difícil acesso ou não servido por transporte público regular, em condução fornecida pelo empregador, configurava horas in itinere e integrava a jornada. Com a Reforma Trabalhista em 11/11/2017, a nova redação do art. 58, § 2º, da CLT suprimiu as horas in itinere de forma cogente para relações de trato sucessivo a partir de sua vigência, afastando o direito no período posterior.\"\n}",
+ "parsed": {
+  "answer": "O tempo de deslocamento deve ser computado na jornada de trabalho apenas em relação ao período de 10 de março de 2015 até 10 de novembro de 2017. A partir de 11 de novembro de 2017 (entrada em vigor da Reforma Trabalhista, Lei nº 13.467/2017), o tempo de percurso não é mais considerado tempo à disposição do empregador e, portanto, não é computado na jornada de trabalho até a rescisão contratual em 31 de agosto de 2021 (ressalvada eventual pronúncia de prescrição quinquenal a contar do ajuizamento da ação).",
+  "citations": [
+   "CLT art. 58, § 2º",
+   "Súmula 90 TST"
+  ],
+  "reasoning": "Antes da vigência da Lei nº 13.467/2017, vigorava a antiga redação do art. 58, § 2º, da CLT e o entendimento da Súmula 90 do TST, segundo os quais o tempo despendido até local de difícil acesso ou não servido por transporte público regular, em condução fornecida pelo empregador, configurava horas in itinere e integrava a jornada. Com a Reforma Trabalhista em 11/11/2017, a nova redação do art. 58, § 2º, da CLT suprimiu as horas in itinere de forma cogente para relações de trato sucessivo a partir de sua vigência, afastando o direito no período posterior."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 504,
+  "output_tokens": 373,
+  "thought_tokens": 655,
+  "total_tokens": 1532
+ },
+ "finish_reason": "FinishReason.STOP"
+}

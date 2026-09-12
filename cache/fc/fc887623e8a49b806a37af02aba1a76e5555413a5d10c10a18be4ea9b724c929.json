@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nBruno foi contratado em 2022 em regime de teletrabalho. O contrato escrito diz expressamente que a prestação se dá 'por produção', com metas mensais de atendimentos, e que o empregado não se sujeita a controle de jornada, com enquadramento no art. 62, III, da CLT anotado no registro de empregados. Na prática, Bruno era obrigado a permanecer logado em sistema corporativo das 9h às 18h, com registro automático de login, logout e tempo de inatividade, sofrendo advertência quando ficava mais de dez minutos ausente. Reuniões diárias obrigatórias ocorriam às 9h. Bruno pede horas extras.\n\nQUESTION:\nBruno está validamente enquadrado no art. 62, III, da CLT? As horas extras são devidas?\n\nREFERENCE ANSWER (gold):\nNão. O enquadramento no art. 62, III, da CLT pressupõe prestação real por produção ou tarefa, sem controle de jornada. Pelo princípio da primazia da realidade, a qualificação formal do contrato e a anotação no registro de empregados não prevalecem sobre os fatos: o registro automático de login e logout, o monitoramento de inatividade, as advertências e as reuniões em horário fixo demonstram controle efetivo e telemático da jornada. Afastado o enquadramento, aplicam-se as regras gerais de duração do trabalho e as horas extras são devidas. Os registros eletrônicos estão em poder da empresa, a quem cabe apresentá-los, tratando-se de fato impeditivo do direito (art. 818, II, da CLT).\n\nRUBRIC:\n- r1 (weight 3): Concludes the art. 62, III classification does NOT hold.\n- r2 (weight 2): Reasons from substance over form (primazia da realidade), not from the contract's wording.\n- r3 (weight 2): Identifies the concrete facts showing real time control (login/logout logs, inactivity monitoring, fixed meetings).\n- r4 (weight 2): Concludes overtime IS owed.\n\nCANDIDATE ANSWER TO GRADE:\nBruno não está validamente enquadrado no art. 62, III, da CLT, e as horas extras eventualmente prestadas são devidas. Embora o contrato formal preveja a prestação de serviços por produção e a dispensa de registro de jornada, vigora no Direito do Trabalho o princípio da primazia da realidade, segundo o qual a situação fática prevalece sobre a forma documental. No caso concreto, havia fiscalização e controle efetivo de horários (obrigação de conexão das 9h às 18h, monitoramento automático de login, logout e inatividade com aplicação de advertências, além de reuniões diárias obrigatórias às 9h). Existindo controle telemático e fiscalização efetiva da jornada, afasta-se a exceção do art. 62 da CLT, sendo Bruno abrangido pelas regras gerais de duração do trabalho e fazendo jus ao pagamento de horas extras.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 62, Princípio da primazia da realidade\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states that Bruno is not validly classified under art. 62, III, of the CLT.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly applies the principle of 'primazia da realidade' (substance over form), stating that the factual situation prevails over the documentary form.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate identifies the concrete facts demonstrating time control, such as the obligation to be connected from 9h to 18h, automatic monitoring of login/logout and inactivity, warnings, and mandatory daily meetings at 9h.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate concludes that overtime is owed to Bruno.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states that Bruno is not validly classified under art. 62, III, of the CLT."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate correctly applies the principle of 'primazia da realidade' (substance over form), stating that the factual situation prevails over the documentary form."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate identifies the concrete facts demonstrating time control, such as the obligation to be connected from 9h to 18h, automatic monitoring of login/logout and inactivity, warnings, and mandatory daily meetings at 9h."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "The candidate concludes that overtime is owed to Bruno."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 867,
+  "output_tokens": 265,
+  "thought_tokens": 295,
+  "total_tokens": 1427
+ },
+ "finish_reason": "FinishReason.STOP"
+}

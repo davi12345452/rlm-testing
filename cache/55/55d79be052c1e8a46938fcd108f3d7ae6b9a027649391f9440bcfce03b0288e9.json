@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nMariana trabalha como auxiliar administrativa desde março de 2019. A partir de fevereiro de 2024 a empresa passou a atrasar os salários, e em junho de 2024 ela já acumulava quatro meses de salários não pagos. Mariana ajuizou reclamação trabalhista pedindo a rescisão indireta do contrato. Na audiência realizada em agosto de 2024, a empresa depositou integralmente os salários atrasados e sustentou que, com o pagamento, não restaria falta grave alguma, e que Mariana, por ter faltado ao trabalho nas duas semanas anteriores à audiência, teria dado causa à ruptura por abandono de emprego.\n\nQUESTION:\nA rescisão indireta deve ser reconhecida? Qual é o fundamento legal e quais os efeitos do pagamento realizado em audiência?\n\nREFERENCE ANSWER (gold):\nSim. O inadimplemento salarial reiterado configura descumprimento das obrigações do contrato pelo empregador (art. 483, 'd', da CLT). O pagamento dos salários atrasados em audiência não elide a mora já configurada (Súmula 13 do TST). A tese de abandono de emprego não prospera porque o art. 483, § 3º, autoriza expressamente o empregado a permanecer ou não no serviço até a decisão final nas hipóteses da alínea 'd'. Reconhecida a rescisão indireta, são devidas as verbas da dispensa imotivada, com o prazo de pagamento do art. 477, § 6º, e a multa do § 8º em caso de atraso.\n\nRUBRIC:\n- r1 (weight 2): Concludes that constructive dismissal (rescisão indireta) IS granted.\n- r2 (weight 2): Grounds it in art. 483, 'd' (employer's breach of contractual obligations), not in art. 482.\n- r3 (weight 2): States that paying the overdue wages at the hearing does not cure the default, per Súmula 13 TST.\n- r4 (weight 1): Rejects the abandonment argument by invoking art. 483, § 3º, which lets the employee stop working while the claim is pending.\n\nCANDIDATE ANSWER TO GRADE:\nSim, a rescisão indireta deve ser reconhecida. O atraso reiterado no pagamento de salários por quatro meses configura descumprimento manifesto e grave das obrigações contratuais pelo empregador, com base no artigo 483, alínea 'd', da CLT. Quanto ao afastamento do serviço nas semanas anteriores à audiência, não se configura abandono de emprego, pois o artigo 483, § 3º, da CLT faculta expressamente ao trabalhador a permanência ou não no serviço até a decisão final quando a ação se fundamenta no descumprimento das obrigações contratuais. Por fim, o depósito integral dos salários em atraso realizado apenas em audiência não elide a falta patronal nem purga a mora de modo a descaracterizar a rescisão indireta, uma vez que a gravidade da conduta já havia violado de forma definitiva a fidúcia da relação de emprego; o pagamento opera apenas a quitação do crédito salarial inadimplido, remanescendo devidas todas as verbas rescisórias correlatas à dispensa imotivada.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 483, \"d\", CLT art. 483, § 3º\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states that the constructive dismissal (rescisão indireta) must be recognized.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly grounds the constructive dismissal in article 483, 'd', of the CLT.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"partial\",\n      \"justification\": \"The candidate correctly states that paying the overdue wages at the hearing does not cure the default, but fails to cite Súmula 13 of the TST as required by the rubric.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate rejects the abandonment argument and correctly invokes article 483, § 3º, of the CLT, explaining that it allows the employee to stop working while the claim is pending.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states that the constructive dismissal (rescisão indireta) must be recognized."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate correctly grounds the constructive dismissal in article 483, 'd', of the CLT."
+   },
+   {
+    "id": "r3",
+    "verdict": "partial",
+    "justification": "The candidate correctly states that paying the overdue wages at the hearing does not cure the default, but fails to cite Súmula 13 of the TST as required by the rubric."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "The candidate rejects the abandonment argument and correctly invokes article 483, § 3º, of the CLT, explaining that it allows the employee to stop working while the claim is pending."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 956,
+  "output_tokens": 272,
+  "thought_tokens": 686,
+  "total_tokens": 1914
+ },
+ "finish_reason": "FinishReason.STOP"
+}

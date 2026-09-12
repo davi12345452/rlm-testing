@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nTiago, técnico de manutenção, recebeu da empresa um telefone celular corporativo e um notebook. Não havia escala de plantão, nem obrigação de permanecer em casa ou em local determinado fora do expediente, nem exigência de resposta imediata. Nos três anos de contrato, Tiago foi acionado fora do horário de trabalho em quatro ocasiões, todas efetivamente pagas como horas extras. Tiago pede o pagamento de sobreaviso correspondente a todo o período não trabalhado, à razão de um terço da hora normal.\n\nQUESTION:\nTiago tem direito ao adicional de sobreaviso pelo período em que portava o celular corporativo?\n\nREFERENCE ANSWER (gold):\nNão. Nos termos da Súmula 428, I, do TST, o uso de instrumentos telemáticos ou informatizados fornecidos pela empresa, por si só, não caracteriza o regime de sobreaviso. O item II exige que o empregado permaneça em regime de plantão ou equivalente, aguardando a qualquer momento o chamado para o serviço, com submissão a controle patronal e restrição concreta à liberdade de locomoção. Nos fatos narrados não havia escala de plantão, exigência de permanência em local determinado nem dever de resposta imediata, de modo que não se configura o sobreaviso. As quatro ocasiões de acionamento efetivo já foram remuneradas como horas extras, o que é o tratamento correto.\n\nRUBRIC:\n- r1 (weight 3): Concludes that on-call pay (sobreaviso) is NOT owed.\n- r2 (weight 2): Relies on item I of Súmula 428 (device alone is not enough).\n- r3 (weight 2): Explains why item II is not met: no plantão scale, no restriction on movement, no duty of immediate response.\n- r4 (weight 1): Notes that the four actual call-outs were correctly paid as overtime.\n\nCANDIDATE ANSWER TO GRADE:\nNão, Tiago não tem direito ao adicional de sobreaviso. Conforme a jurisprudência consolidada, o mero fornecimento ou posse de instrumentos telemáticos e informatizados pela empresa (como telefone celular corporativo e notebook) não configura, por si só, o regime de sobreaviso. Para que se caracterize o sobreaviso, seria necessário que o empregado estivesse submetido a regime de plantão ou equivalente, com restrição à sua liberdade e aguardando a qualquer momento o chamado durante o período de descanso, o que não ocorria no caso concreto. Além disso, as ocasiões eventuais em que foi acionado já foram devidamente remuneradas como horas extras.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nSúmula 428 TST\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly concludes that Tiago is not entitled to the on-call pay (sobreaviso).\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly states that the mere provision of telematics instruments does not configure the on-call regime, relying on the principle of Súmula 428, I (and citing the Súmula at the end).\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explains that the on-call regime requires a plantão schedule, restriction of freedom, and waiting for a call, which did not happen in this case.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate notes that the occasions when he was actually called were duly remunerated as overtime.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly concludes that Tiago is not entitled to the on-call pay (sobreaviso)."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate correctly states that the mere provision of telematics instruments does not configure the on-call regime, relying on the principle of Súmula 428, I (and citing the Súmula at the end)."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate explains that the on-call regime requires a plantão schedule, restriction of freedom, and waiting for a call, which did not happen in this case."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "The candidate notes that the occasions when he was actually called were duly remunerated as overtime."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 768,
+  "output_tokens": 274,
+  "thought_tokens": 577,
+  "total_tokens": 1619
+ },
+ "finish_reason": "FinishReason.STOP"
+}

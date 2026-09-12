@@ -1,0 +1,40 @@
+{
+  "id": "case_08_dano_extrapatrimonial",
+  "title": "Statutory damage bands as a cap",
+  "reasoning_type": "constitutional_override",
+  "difficulty": "medium",
+  "note": "Art. 223-G §1º reads like a hard cap and is the obvious retrieval target. ADI 6050 converts it into a non-binding parameter.",
+  "facts": "Em ação trabalhista, restou provado assédio moral gravíssimo e reiterado, com exposição pública e humilhação da empregada ao longo de três anos, resultando em incapacidade laboral temporária. O salário contratual da ofendida era de R$ 1.600,00. O juízo entendeu que a reparação adequada, considerando a gravidade concreta do dano e o porte econômico da empresa — um grupo com faturamento bilionário —, seria de R$ 150.000,00. A empresa recorre sustentando que o art. 223-G, § 1º, IV, da CLT limita a condenação a cinquenta vezes o salário contratual, ou seja, R$ 80.000,00.",
+  "question": "O valor arbitrado pode ultrapassar o limite do art. 223-G, § 1º, IV, da CLT?",
+  "gold": {
+    "answer": "Sim. O STF, na ADI 6050, deu interpretação conforme a Constituição ao art. 223-G, § 1º, da CLT, fixando que os parâmetros ali previstos são orientativos e não constituem teto absoluto. O juiz pode arbitrar indenização superior ao limite do inciso aplicável, desde que de forma fundamentada, observados os princípios da razoabilidade, da proporcionalidade e da reparação integral, considerando a gravidade concreta do dano e a capacidade econômica do ofensor. Como a sentença fundamentou o arbitramento na gravidade do assédio e no porte econômico do grupo, a condenação de R$ 150.000,00 pode ser mantida.",
+    "required_citations": [
+      "STF ADI 6050",
+      "CLT art. 223-G §1º"
+    ],
+    "supporting_citations": [],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes the award CAN exceed the statutory band.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Grounds this in ADI 6050 / the interpretation-in-conformity given by the Supreme Court.",
+        "weight": 3
+      },
+      {
+        "id": "r3",
+        "claim": "Describes the bands as orienting parameters rather than binding caps.",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Notes the requirement of a reasoned decision (razoabilidade/proporcionalidade).",
+        "weight": 1
+      }
+    ]
+  }
+}

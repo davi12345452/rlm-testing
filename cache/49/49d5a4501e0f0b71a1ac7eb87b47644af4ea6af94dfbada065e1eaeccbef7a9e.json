@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nLuciana, beneficiária da justiça gratuita, ajuizou reclamação com pedido de adicional de insalubridade. Realizada perícia técnica, o laudo concluiu pela inexistência de agente insalubre, e o pedido foi julgado improcedente nesse ponto. Os demais pedidos foram acolhidos e Luciana obteve crédito líquido de R$ 40.000,00 na mesma ação. Os honorários periciais foram arbitrados em R$ 3.500,00, e a sentença determinou seu desconto direto do crédito obtido por Luciana.\n\nQUESTION:\nÉ válido o desconto dos honorários periciais do crédito obtido por Luciana na própria ação?\n\nREFERENCE ANSWER (gold):\nNão. Embora o art. 790-B, caput, da CLT atribua os honorários periciais à parte sucumbente na pretensão objeto da perícia ainda que beneficiária da justiça gratuita, o STF, no julgamento da ADI 5766, declarou inconstitucional exatamente o mecanismo que permitia cobrar tais encargos com os créditos obtidos pelo beneficiário no próprio processo ou em outro processo. Logo, o desconto determinado na sentença não pode subsistir. A obrigação permanece sob condição suspensiva de exigibilidade e o encargo pericial recai sobre a União, na forma da regulamentação aplicável.\n\nRUBRIC:\n- r1 (weight 3): Concludes the deduction from her award is INVALID.\n- r2 (weight 3): Grounds this in the Supreme Court ruling ADI 5766.\n- r3 (weight 2): Does not simply apply art. 790-B literally to uphold the deduction.\n- r4 (weight 1): Mentions that the obligation stays suspended / falls on the Union rather than vanishing outright.\n\nCANDIDATE ANSWER TO GRADE:\nNão é válido o desconto dos honorários periciais dos créditos obtidos por Luciana. Embora a trabalhadora tenha sido sucumbente no objeto da perícia, ela é beneficiária da justiça gratuita. O Supremo Tribunal Federal, no julgamento vinculante da ADI 5766, declarou inconstitucional a cobrança ou compensação de honorários periciais sobre créditos judiciais auferidos pelo beneficiário da gratuidade de justiça no próprio processo ou em outro. Por conseguinte, a verba honorária pericial não pode ser deduzida do montante auferido por Luciana, recaindo o encargo sobre a União, nos termos da regulamentação aplicável.\n\nCITATIONS GIVEN BY THE CANDIDATE:\nSTF ADI 5766, CLT art. 790-B\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly states that the deduction of expert fees from Luciana's credits is not valid ('Não é válido o desconto...').\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly grounds the invalidity in the Supreme Court ruling ADI 5766.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate does not uphold the deduction and correctly notes that despite her losing the expert claim, her status as a beneficiary of free justice protects her credits, avoiding a literal application of art. 790-B.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate mentions that the burden falls on the Union ('recaindo o encargo sobre a União').\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly states that the deduction of expert fees from Luciana's credits is not valid ('Não é válido o desconto...')."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate correctly grounds the invalidity in the Supreme Court ruling ADI 5766."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate does not uphold the deduction and correctly notes that despite her losing the expert claim, her status as a beneficiary of free justice protects her credits, avoiding a literal application of art. 790-B."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "The candidate mentions that the burden falls on the Union ('recaindo o encargo sobre a União')."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 755,
+  "output_tokens": 268,
+  "thought_tokens": 488,
+  "total_tokens": 1511
+ },
+ "finish_reason": "FinishReason.STOP"
+}

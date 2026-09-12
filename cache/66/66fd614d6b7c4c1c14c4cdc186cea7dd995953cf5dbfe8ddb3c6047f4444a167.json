@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nA convenção coletiva da categoria de João, vigente de 2018 a 2019, previa auxílio-alimentação mensal de R$ 500,00. Expirado o prazo de vigência do instrumento em dezembro de 2019 e não celebrado novo acordo, a empresa suprimiu o benefício a partir de janeiro de 2020. João ajuizou ação em 2022 pedindo o restabelecimento do auxílio, sustentando que a cláusula normativa aderiu ao seu contrato individual de trabalho e só poderia ser suprimida por nova negociação coletiva.\n\nPERGUNTA:\nA cláusula normativa expirada continua produzindo efeitos no contrato individual de João?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Não. A cláusula normativa expirada não continua produzindo efeitos no contrato individual de trabalho de João. A legislação trabalhista veda expressamente o princípio da ultratividade de acordos e convenções coletivas, de modo que as condições e benefícios instituídos por instrumento coletivo extinguem-se com o término de seu prazo de vigência, não se integrando em definitivo aos contratos individuais de trabalho. Além da previsão legal expressa da Reforma Trabalhista, o Supremo Tribunal Federal declarou inconstitucional a Súmula 277 do TST, confirmando a impossibilidade de ultratividade das cláusulas coletivas.\",\n  \"citations\": [\n    \"CLT art. 614, § 3º\",\n    \"STF ADPF 323\"\n  ],\n  \"reasoning\": \"O art. 614, § 3º, da CLT, com a redação dada pela Lei 13.467/2017, proíbe expressamente a ultratividade das normas coletivas. Ademais, o STF, no julgamento vinculante da ADPF 323, declarou a inconstitucionalidade da Súmula 277 do TST, assentando que cláusulas de acordos ou convenções coletivas não aderem permanentemente aos contratos de trabalho após o vencimento do prazo pactuado.\"\n}",
+ "parsed": {
+  "answer": "Não. A cláusula normativa expirada não continua produzindo efeitos no contrato individual de trabalho de João. A legislação trabalhista veda expressamente o princípio da ultratividade de acordos e convenções coletivas, de modo que as condições e benefícios instituídos por instrumento coletivo extinguem-se com o término de seu prazo de vigência, não se integrando em definitivo aos contratos individuais de trabalho. Além da previsão legal expressa da Reforma Trabalhista, o Supremo Tribunal Federal declarou inconstitucional a Súmula 277 do TST, confirmando a impossibilidade de ultratividade das cláusulas coletivas.",
+  "citations": [
+   "CLT art. 614, § 3º",
+   "STF ADPF 323"
+  ],
+  "reasoning": "O art. 614, § 3º, da CLT, com a redação dada pela Lei 13.467/2017, proíbe expressamente a ultratividade das normas coletivas. Ademais, o STF, no julgamento vinculante da ADPF 323, declarou a inconstitucionalidade da Súmula 277 do TST, assentando que cláusulas de acordos ou convenções coletivas não aderem permanentemente aos contratos de trabalho após o vencimento do prazo pactuado."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 519,
+  "output_tokens": 305,
+  "thought_tokens": 362,
+  "total_tokens": 1186
+ },
+ "finish_reason": "FinishReason.STOP"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "case_01_rescisao_indireta",
+  "title": "Constructive dismissal after four months of unpaid wages",
+  "reasoning_type": "polarity_trap",
+  "difficulty": "easy",
+  "note": "The vocabulary of the facts ('justa causa', 'rescisão') pulls a retriever toward art. 482, which governs misconduct by the *employee*. The dispositive rule is art. 483 plus Súmula 13.",
+  "facts": "Mariana trabalha como auxiliar administrativa desde março de 2019. A partir de fevereiro de 2024 a empresa passou a atrasar os salários, e em junho de 2024 ela já acumulava quatro meses de salários não pagos. Mariana ajuizou reclamação trabalhista pedindo a rescisão indireta do contrato. Na audiência realizada em agosto de 2024, a empresa depositou integralmente os salários atrasados e sustentou que, com o pagamento, não restaria falta grave alguma, e que Mariana, por ter faltado ao trabalho nas duas semanas anteriores à audiência, teria dado causa à ruptura por abandono de emprego.",
+  "question": "A rescisão indireta deve ser reconhecida? Qual é o fundamento legal e quais os efeitos do pagamento realizado em audiência?",
+  "gold": {
+    "answer": "Sim. O inadimplemento salarial reiterado configura descumprimento das obrigações do contrato pelo empregador (art. 483, 'd', da CLT). O pagamento dos salários atrasados em audiência não elide a mora já configurada (Súmula 13 do TST). A tese de abandono de emprego não prospera porque o art. 483, § 3º, autoriza expressamente o empregado a permanecer ou não no serviço até a decisão final nas hipóteses da alínea 'd'. Reconhecida a rescisão indireta, são devidas as verbas da dispensa imotivada, com o prazo de pagamento do art. 477, § 6º, e a multa do § 8º em caso de atraso.",
+    "required_citations": [
+      "CLT art. 483",
+      "Súmula 13 TST"
+    ],
+    "supporting_citations": [
+      "CLT art. 477 §6º e §8º"
+    ],
+    "distractor_citations": [
+      "CLT art. 482"
+    ],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes that constructive dismissal (rescisão indireta) IS granted.",
+        "weight": 2
+      },
+      {
+        "id": "r2",
+        "claim": "Grounds it in art. 483, 'd' (employer's breach of contractual obligations), not in art. 482.",
+        "weight": 2
+      },
+      {
+        "id": "r3",
+        "claim": "States that paying the overdue wages at the hearing does not cure the default, per Súmula 13 TST.",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Rejects the abandonment argument by invoking art. 483, § 3º, which lets the employee stop working while the claim is pending.",
+        "weight": 1
+      }
+    ]
+  }
+}

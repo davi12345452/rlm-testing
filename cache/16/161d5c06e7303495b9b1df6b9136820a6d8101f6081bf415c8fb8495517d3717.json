@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "PASSAGENS RECUPERADAS:\n--- passage 1 ---\n[CLT art. 790-B] (clt_excerpts)\n[CLT art. 790-B] Expert-witness fees and legal aid\nStatus: in force, but **partially unconstitutional**\nCross-refs: [STF ADI 5766], [CLT art. 791-A §4º]\nA responsabilidade pelo pagamento dos honorários periciais é da parte sucumbente na pretensão objeto\nda perícia, ainda que beneficiária da justiça gratuita.\n\n§ 4º Somente no caso em que o beneficiário da justiça gratuita não tenha obtido em juízo créditos\ncapazes de suportar a despesa, a União responderá pelo encargo.\n\n> **Constitutional note.** [STF ADI 5766] struck down the mechanism that charged these fees against\n> credits won in the very same claim. See that entry before answering any legal-aid cost question.\n\n--- passage 2 ---\n[Súmula 372 TST] (sumulas_tst)\n[Súmula 372 TST] Ten years of a function bonus — financial stability\nStatus: **superseded for reversals on or after 11 Nov 2017** by [CLT art. 468] § 2º.\nCross-refs: [CLT art. 468], [Lei 13.467/2017 vigência]\nStill governs earlier reversals.\n\nI — Percebida a gratificação de função por dez ou mais anos pelo empregado, se o empregador, sem\njusto motivo, revertê-lo a seu cargo efetivo, não poderá retirar-lhe a gratificação tendo em vista o\nprincípio da estabilidade financeira.\n\nII — Mantido o empregado no exercício da função comissionada, não pode o empregador reduzir o valor\nda gratificação.\n\n--- passage 3 ---\n[Princípio da primazia da realidade] (precedentes_vinculantes)\n[Princípio da primazia da realidade] Substance over form\nStatus: general principle, in force\nCross-refs: [CLT art. 3º], [CLT art. 442-B], [CLT art. 62]\nNo Direito do Trabalho, os fatos prevalecem sobre a forma documental. A denominação dada pelas partes\nao contrato, o enquadramento formal anotado em CTPS ou a assinatura de um contrato de prestação de\nserviços autônomos **não afastam o vínculo de emprego** se, no plano dos fatos, estiverem presentes\npessoalidade, não eventualidade, onerosidade e subordinação.\n\nO mesmo princípio governa o enquadramento no art. 62 da CLT: o que importa é a existência **real** de\ncontrole de jornada, não a anotação formal ou a nomenclatura do cargo.\n\n--- passage 4 ---\n[STF ADI 5766] (precedentes_vinculantes)\n[STF ADI 5766] Legal aid and litigation costs in the labour courts\nStatus: binding, with general effect (*erga omnes*)\nCross-refs: [CLT art. 790-B], [CLT art. 791-A §4º]\nO Supremo Tribunal Federal julgou parcialmente procedente a ação e declarou **inconstitucionais** os\ndispositivos da Reforma Trabalhista que impunham ao beneficiário da justiça gratuita o pagamento de\n**honorários periciais e de honorários advocatícios de sucumbência com os créditos obtidos no próprio\nprocesso ou em outro processo**, bem como a exigência de custas para propositura de nova ação após\narquivamento.\n\n**Operative rule.** O beneficiário da justiça gratuita que sucumbe — inclusive na pretensão objeto da\nperícia — **não pode ter esses encargos descontados dos créditos que obteve na reclamação**. A\nobrigação permanece sob condição suspensiva de exigibilidade e, quanto aos honorários periciais, o\nencargo recai sobre a União na forma da regulamentação aplicável.\n\n--- passage 5 ---\n[Súmula 331 TST] (sumulas_tst)\n[Súmula 331 TST] Outsourcing and the client's liability\nStatus: in force\nCross-refs: [CLT art. 2º]\nIV — O inadimplemento das obrigações trabalhistas por parte do empregador implica a responsabilidade\n**subsidiária** do tomador dos serviços quanto àquelas obrigações, desde que haja participado da\nrelação processual e conste também do título executivo judicial.\n\nV — Os entes integrantes da Administração Pública direta e indireta respondem subsidiariamente\n**caso evidenciada a sua conduta culposa** no cumprimento das obrigações da Lei 8.666/93,\nespecialmente na fiscalização do cumprimento das obrigações contratuais e legais da prestadora de\nserviço como empregadora. A aludida responsabilidade **não decorre de mero inadimplemento** das\nobrigações trabalhistas assumidas pela empresa regularmente contratada.\n\nVI — A responsabilidade subsidiária do tomador de serviços abrange todas as verbas decorrentes da\ncondenação referentes ao período da prestação laboral.\n\n--- passage 6 ---\n[CLT art. 482] (clt_excerpts)\n[CLT art. 482] Just cause attributable to the employee\nStatus: in force\nCross-refs: [CLT art. 483]\nConstituem justa causa para rescisão do contrato de trabalho pelo empregador: ato de improbidade;\nincontinência de conduta ou mau procedimento; negociação habitual por conta própria; condenação\ncriminal transitada em julgado; desídia no desempenho das funções; embriaguez habitual ou em\nserviço; violação de segredo da empresa; ato de indisciplina ou de insubordinação; abandono de\nemprego; ato lesivo da honra ou da boa fama praticado no serviço; ofensas físicas; prática constante\nde jogos de azar; perda da habilitação para o exercício da profissão.\n\n> **Direction note.** Este artigo trata da falta do **empregado**. A falta grave do **empregador** é\n> tratada em [CLT art. 483]. Confundi-los inverte o polo da rescisão.\n\nFATOS:\nLuciana, beneficiária da justiça gratuita, ajuizou reclamação com pedido de adicional de insalubridade. Realizada perícia técnica, o laudo concluiu pela inexistência de agente insalubre, e o pedido foi julgado improcedente nesse ponto. Os demais pedidos foram acolhidos e Luciana obteve crédito líquido de R$ 40.000,00 na mesma ação. Os honorários periciais foram arbitrados em R$ 3.500,00, e a sentença determinou seu desconto direto do crédito obtido por Luciana.\n\nPERGUNTA:\nÉ válido o desconto dos honorários periciais do crédito obtido por Luciana na própria ação?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou are given a set of passages retrieved from the corpus. Answer from those passages alone.\n\nIf the retrieved passages are not sufficient to settle the question — for instance because they\npoint to a provision you were not given — say so explicitly in your answer rather than guessing.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Não é válido o desconto dos honorários periciais do crédito obtido por Luciana. Por ser beneficiária da justiça gratuita, ela não pode ter os honorários periciais deduzidos dos créditos auferidos na própria reclamação trabalhista ou em outro processo. Em virtude do julgamento vinculante da matéria pelo Supremo Tribunal Federal, o encargo pelo pagamento dos honorários periciais deve recair sobre a União, na forma da regulamentação aplicável.\",\n  \"citations\": [\n    \"STF ADI 5766\",\n    \"CLT art. 790-B\"\n  ],\n  \"reasoning\": \"Embora o texto literal do art. 790-B, § 4º, da CLT autorizasse o pagamento de honorários periciais com créditos obtidos em juízo pelo beneficiário da gratuidade, o STF declarou inconstitucional essa sistemática na ADI 5766. Como a decisão possui eficácia erga omnes e efeito vinculante, é vedado o abatimento dos honorários periciais sobre os créditos de Luciana, incumbindo à União a responsabilidade pela despesa.\"\n}",
+ "parsed": {
+  "answer": "Não é válido o desconto dos honorários periciais do crédito obtido por Luciana. Por ser beneficiária da justiça gratuita, ela não pode ter os honorários periciais deduzidos dos créditos auferidos na própria reclamação trabalhista ou em outro processo. Em virtude do julgamento vinculante da matéria pelo Supremo Tribunal Federal, o encargo pelo pagamento dos honorários periciais deve recair sobre a União, na forma da regulamentação aplicável.",
+  "citations": [
+   "STF ADI 5766",
+   "CLT art. 790-B"
+  ],
+  "reasoning": "Embora o texto literal do art. 790-B, § 4º, da CLT autorizasse o pagamento de honorários periciais com créditos obtidos em juízo pelo beneficiário da gratuidade, o STF declarou inconstitucional essa sistemática na ADI 5766. Como a decisão possui eficácia erga omnes e efeito vinculante, é vedado o abatimento dos honorários periciais sobre os créditos de Luciana, incumbindo à União a responsabilidade pela despesa."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1947,
+  "output_tokens": 258,
+  "thought_tokens": 535,
+  "total_tokens": 2740
+ },
+ "finish_reason": "FinishReason.STOP"
+}

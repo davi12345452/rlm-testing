@@ -1,0 +1,55 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nBruno foi contratado em 2022 em regime de teletrabalho. O contrato escrito diz expressamente que a prestação se dá 'por produção', com metas mensais de atendimentos, e que o empregado não se sujeita a controle de jornada, com enquadramento no art. 62, III, da CLT anotado no registro de empregados. Na prática, Bruno era obrigado a permanecer logado em sistema corporativo das 9h às 18h, com registro automático de login, logout e tempo de inatividade, sofrendo advertência quando ficava mais de dez minutos ausente. Reuniões diárias obrigatórias ocorriam às 9h. Bruno pede horas extras.\n\nPERGUNTA:\nBruno está validamente enquadrado no art. 62, III, da CLT? As horas extras são devidas?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Bruno não está validamente enquadrado na exceção do art. 62, III, da CLT, sendo-lhe devidas as horas extras que forem comprovadamente laboradas além do limite legal ou contratual. Embora a Lei 14.442/2022 tenha alterado o art. 62, III, da CLT para restringir a dispensa de controle de jornada aos empregados em teletrabalho contratados por produção ou tarefa, e o contrato formal assim estipulasse, vigora no Direito do Trabalho o princípio da primazia da realidade sobre a forma (CLT art. 9º). Na prática, o empregador exercia efetivo e rígido controle de jornada por meio telemático (obrigação de login entre 9h e 18h, reuniões em horários fixos e sanções disciplinares por inatividade superior a dez minutos). Constatada a efetiva fiscalização e subordinação a horário de trabalho, descaracteriza-se o enquadramento no art. 62, III, da CLT, restabelecendo-se o direito à limitação da jornada (CF art. 7º, XIII; CLT art. 58) e ao pagamento de horas extraordinárias.\",\n  \"citations\": [\n    \"CLT art. 9º\",\n    \"CLT art. 58\",\n    \"CLT art. 62, III\",\n    \"CF art. 7º, XIII\"\n  ],\n  \"reasoning\": \"A despeito da previsão formal em contrato e registro de enquadramento no art. 62, III, da CLT (com a redação da Lei 14.442/2022 que exige ajuste por produção/tarefa), a subordinação fática a horários definidos, com registro telemático de login/inatividade e aplicação de advertências, atrai a incidência do princípio da primazia da realidade (art. 9º da CLT). O controle efetivo de horário afasta a incidência da exceção do art. 62 da CLT e restabelece a garantia de jornada máxima e pagamento de horas extras.\"\n}",
+ "parsed": {
+  "answer": "Bruno não está validamente enquadrado na exceção do art. 62, III, da CLT, sendo-lhe devidas as horas extras que forem comprovadamente laboradas além do limite legal ou contratual. Embora a Lei 14.442/2022 tenha alterado o art. 62, III, da CLT para restringir a dispensa de controle de jornada aos empregados em teletrabalho contratados por produção ou tarefa, e o contrato formal assim estipulasse, vigora no Direito do Trabalho o princípio da primazia da realidade sobre a forma (CLT art. 9º). Na prática, o empregador exercia efetivo e rígido controle de jornada por meio telemático (obrigação de login entre 9h e 18h, reuniões em horários fixos e sanções disciplinares por inatividade superior a dez minutos). Constatada a efetiva fiscalização e subordinação a horário de trabalho, descaracteriza-se o enquadramento no art. 62, III, da CLT, restabelecendo-se o direito à limitação da jornada (CF art. 7º, XIII; CLT art. 58) e ao pagamento de horas extraordinárias.",
+  "citations": [
+   "CLT art. 9º",
+   "CLT art. 58",
+   "CLT art. 62, III",
+   "CF art. 7º, XIII"
+  ],
+  "reasoning": "A despeito da previsão formal em contrato e registro de enquadramento no art. 62, III, da CLT (com a redação da Lei 14.442/2022 que exige ajuste por produção/tarefa), a subordinação fática a horários definidos, com registro telemático de login/inatividade e aplicação de advertências, atrai a incidência do princípio da primazia da realidade (art. 9º da CLT). O controle efetivo de horário afasta a incidência da exceção do art. 62 da CLT e restabelece a garantia de jornada máxima e pagamento de horas extras."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 544,
+  "output_tokens": 478,
+  "thought_tokens": 385,
+  "total_tokens": 1407
+ },
+ "finish_reason": "FinishReason.STOP"
+}

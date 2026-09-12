@@ -1,0 +1,84 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nJoana foi admitida em 10 de março de 2015 em uma fábrica situada em zona rural, não servida por transporte público regular. A empresa sempre forneceu ônibus fretado para o deslocamento dos empregados, gastando-se 50 minutos na ida e 50 minutos na volta. O contrato foi encerrado por dispensa sem justa causa em 31 de agosto de 2021. Joana pede o cômputo de todo o tempo de percurso como jornada de trabalho, ao longo de todo o contrato.\n\nPERGUNTA:\nO tempo de deslocamento deve ser computado na jornada? Em relação a qual período?\n\nWHAT YOU HAVE DONE SO FAR:\nTHOUGHT: Let's list the documents in the corpus to see what statutes and súmulas are available.\nACTION: list_documents()\nOBSERVATION:\nDocuments in the corpus:\n- clt_excerpts: Consolidação das Leis do Trabalho (CLT) — Curated Excerpts (22 sections)\n- precedentes_vinculantes: Overriding Norms: Constitutional Rulings and Transitional Rules (7 sections)\n- sumulas_tst: Súmulas do Tribunal Superior do Trabalho (TST) — Curated Excerpts (16 sections)\n\nActions remaining before you are forced to answer: 11.",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou do not receive the corpus. You explore it, one action per turn, using these tools:\n\nlist_documents()            -> the documents in the corpus\noutline(doc_id=\"\")          -> every section key, title and validity status (cheap, start here)\ngrep(pattern, doc_id=\"\")    -> case-insensitive regex over section text, returns keys + snippets\nread(key)                   -> the full text of one section, by its citation key\nfollow(key)                 -> the sections cross-referenced by a section, with their status\n\nplus two control actions:\n\nspawn(sub_question, focus_keys=[])  -> run a fresh copy of yourself on a self-contained\n                                       sub-question, starting from the given section keys. It\n                                       explores on its own and returns a short conclusion with\n                                       citations. Use it when a sub-problem would otherwise force\n                                       you to read several long sections you do not need in full.\nfinish(citations)                  -> stop investigating. You will then be asked to write the\n                                       final answer from your transcript, so finish only once you\n                                       can support every part of it from sections you have read.\n\nHow to work:\n- Start with outline() to see every section key and its validity status. It is cheap and it is the\n  map. Do not grep blindly before you have seen the map.\n- When a section looks relevant, read() it, then follow() it. A cross-reference is the corpus\n  telling you that another provision modifies or completes this one; ignoring it is how you get a\n  confidently wrong answer.\n- Delegate with spawn when a sub-question is separable, for example one period of a contract that\n  straddles a legal reform.\n- Do not finish while an unread cross-reference could change the outcome.\n\nReturn exactly one action per turn, as JSON matching the schema. Fill only the fields that action\nneeds.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "thought": {
+     "type": "string",
+     "description": "One or two sentences: what you now know and what you still need."
+    },
+    "action": {
+     "type": "string",
+     "enum": [
+      "list_documents",
+      "outline",
+      "grep",
+      "read",
+      "follow",
+      "spawn",
+      "finish"
+     ]
+    },
+    "doc_id": {
+     "type": "string",
+     "description": "Argument for outline/grep."
+    },
+    "pattern": {
+     "type": "string",
+     "description": "Argument for grep."
+    },
+    "key": {
+     "type": "string",
+     "description": "Argument for read/follow."
+    },
+    "sub_question": {
+     "type": "string",
+     "description": "Argument for spawn."
+    },
+    "focus_keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for spawn: section keys the sub-agent should start from."
+    },
+    "answer": {
+     "type": "string",
+     "description": "REQUIRED when action is finish: the complete legal answer in Brazilian Portuguese. Never finish with this field empty."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for finish: exact corpus citation keys."
+    }
+   },
+   "required": [
+    "thought",
+    "action"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"thought\": \"I need to check the available sections in clt_excerpts regarding working hours and travel time (horas in itinere).\",\n  \"action\": \"outline\",\n  \"doc_id\": \"clt_excerpts\"\n}",
+ "parsed": {
+  "thought": "I need to check the available sections in clt_excerpts regarding working hours and travel time (horas in itinere).",
+  "action": "outline",
+  "doc_id": "clt_excerpts"
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 996,
+  "output_tokens": 59,
+  "thought_tokens": 211,
+  "total_tokens": 1266
+ },
+ "finish_reason": "FinishReason.STOP"
+}

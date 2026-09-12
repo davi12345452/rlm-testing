@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nEm ação trabalhista, restou provado assédio moral gravíssimo e reiterado, com exposição pública e humilhação da empregada ao longo de três anos, resultando em incapacidade laboral temporária. O salário contratual da ofendida era de R$ 1.600,00. O juízo entendeu que a reparação adequada, considerando a gravidade concreta do dano e o porte econômico da empresa — um grupo com faturamento bilionário —, seria de R$ 150.000,00. A empresa recorre sustentando que o art. 223-G, § 1º, IV, da CLT limita a condenação a cinquenta vezes o salário contratual, ou seja, R$ 80.000,00.\n\nPERGUNTA:\nO valor arbitrado pode ultrapassar o limite do art. 223-G, § 1º, IV, da CLT?\n\nWHAT YOU HAVE DONE SO FAR:\nTHOUGHT: Let's check the documents available in the corpus to locate CLT art. 223-G and relevant STF / TST decisions.\nACTION: list_documents()\nOBSERVATION:\nDocuments in the corpus:\n- clt_excerpts: Consolidação das Leis do Trabalho (CLT) — Curated Excerpts (22 sections)\n- precedentes_vinculantes: Overriding Norms: Constitutional Rulings and Transitional Rules (7 sections)\n- sumulas_tst: Súmulas do Tribunal Superior do Trabalho (TST) — Curated Excerpts (16 sections)\n\nTHOUGHT: I need to check the outline of precedentes_vinculantes to see the STF constitutional rulings regarding the limits/tarifamento of dano extrapatrimonial (art. 223-G da CLT).\nACTION: outline(doc_id='precedentes_vinculantes')\nOBSERVATION:\n# precedentes_vinculantes\n  [Lei 13.467/2017 vigência] Commencement of the 2017 labour reform — status: in force\n  [Lei 12.506/2011] Proportional notice period — status: in force\n  [CF art. 7º XXIX] Constitutional limitation period — status: in force\n  [STF ADI 5766] Legal aid and litigation costs in the labour courts — status: binding, with general effect (*erga omnes*)\n  [STF ADPF 323] Ultra-activity of collective agreements — status: binding, with general effect\n  [STF ADI 6050] Statutory bands for non-pecuniary damages — status: binding, with general effect\n  [Princípio da primazia da realidade] Substance over form — status: general principle, in force\n\nTHOUGHT: Read STF ADI 6050 to see the binding ruling on the statutory caps/bands in CLT art. 223-G.\nACTION: read(key='STF ADI 6050')\nOBSERVATION:\n--- precedentes_vinculantes (lines 77-89) ---\n[STF ADI 6050] Statutory bands for non-pecuniary damages\nStatus: binding, with general effect\nCross-refs: [CLT art. 223-G §1º]\nO Supremo Tribunal Federal deu **interpretação conforme a Constituição** aos incisos do art. 223-G,\n§ 1º, da CLT, fixando que os critérios de quantificação ali previstos constituem **parâmetros\norientativos** para a fixação da indenização por dano extrapatrimonial.\n\n**Operative rule.** Os valores indicados **não funcionam como teto absoluto**. O juiz pode arbitrar\nindenização superior ao limite do inciso aplicável, desde que o faça de forma fundamentada,\nobservados os princípios da razoabilidade, da proporcionalidade e da reparação integral, e\nconsiderando a gravidade concreta do dano e a capacidade econômica do ofensor.\n\nTHOUGHT: I need to read CLT art. 223-G §1º to verify the underlying statutory text referenced by STF ADI 6050.\nACTION: read(key='CLT art. 223-G §1º')\nOBSERVATION:\n--- clt_excerpts (lines 142-156) ---\n[CLT art. 223-G §1º] Damages for non-pecuniary harm — statutory bands\nStatus: in force, but **read down** by the Supreme Court\nCross-refs: [STF ADI 6050]\nAo apreciar o pedido, o juízo considerará a natureza do bem jurídico tutelado e fixará a indenização\nobservando os seguintes parâmetros, calculados sobre o salário contratual do ofendido:\n\nI — ofensa de natureza leve: até três vezes;\nII — ofensa de natureza média: até cinco vezes;\nIII — ofensa de natureza grave: até vinte vezes;\nIV — ofensa de natureza gravíssima: até cinquenta vezes.\n\n> **Constitutional note.** See [STF ADI 6050]: these bands are **orienting parameters, not binding\n> caps**. A judge may exceed them on reasoned grounds.\n\nYour investigation is complete. Write the final answer.",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have already finished investigating the corpus. Below is the transcript of everything you read.\n\nWrite the final answer now, using only what the transcript actually shows. Do not speculate beyond\nit. State the bottom line explicitly -- including when the correct bottom line is that nothing is\nowed -- and, where the facts span a legislative change, give the answer for each period separately.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Sim, o valor arbitrado a título de indenização por danos morais pode ultrapassar o limite previsto no art. 223-G, § 1º, IV, da CLT. Conforme fixado pelo Supremo Tribunal Federal no julgamento da ADI 6050, com eficácia vinculante e efeito erga omnes, foi conferida interpretação conforme a Constituição ao art. 223-G, § 1º, da CLT para estabelecer que os critérios de quantificação ali previstos possuem caráter meramente orientativo, não funcionando como teto absoluto. Dessa forma, o magistrado pode arbitrar indenização superior aos limites legais mediante decisão fundamentada, em observância aos princípios da razoabilidade, da proporcionalidade e da reparação integral, considerando a gravidade concreta do dano e a capacidade econômica do ofensor.\",\n  \"citations\": [\n    \"STF ADI 6050\",\n    \"CLT art. 223-G §1º\"\n  ],\n  \"reasoning\": \"Embora o art. 223-G, § 1º, IV, da CLT estabeleça a tarifação de até cinquenta vezes o salário contratual para ofensas gravíssimas, essa regra foi objeto de modulação constitucional pelo STF na ADI 6050. Por ter status vinculante e erga omnes, a decisão do STF prevalece, definindo que os limites do dispositivo celetista são meros parâmetros orientadores, permitindo ao julgador superar o montante tarifado se as circunstâncias do caso concreto exigirem.\"\n}",
+ "parsed": {
+  "answer": "Sim, o valor arbitrado a título de indenização por danos morais pode ultrapassar o limite previsto no art. 223-G, § 1º, IV, da CLT. Conforme fixado pelo Supremo Tribunal Federal no julgamento da ADI 6050, com eficácia vinculante e efeito erga omnes, foi conferida interpretação conforme a Constituição ao art. 223-G, § 1º, da CLT para estabelecer que os critérios de quantificação ali previstos possuem caráter meramente orientativo, não funcionando como teto absoluto. Dessa forma, o magistrado pode arbitrar indenização superior aos limites legais mediante decisão fundamentada, em observância aos princípios da razoabilidade, da proporcionalidade e da reparação integral, considerando a gravidade concreta do dano e a capacidade econômica do ofensor.",
+  "citations": [
+   "STF ADI 6050",
+   "CLT art. 223-G §1º"
+  ],
+  "reasoning": "Embora o art. 223-G, § 1º, IV, da CLT estabeleça a tarifação de até cinquenta vezes o salário contratual para ofensas gravíssimas, essa regra foi objeto de modulação constitucional pelo STF na ADI 6050. Por ter status vinculante e erga omnes, a decisão do STF prevalece, definindo que os limites do dispositivo celetista são meros parâmetros orientadores, permitindo ao julgador superar o montante tarifado se as circunstâncias do caso concreto exigirem."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1560,
+  "output_tokens": 352,
+  "thought_tokens": 270,
+  "total_tokens": 2182
+ },
+ "finish_reason": "FinishReason.STOP"
+}

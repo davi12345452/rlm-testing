@@ -1,0 +1,55 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nEm ação trabalhista, restou provado assédio moral gravíssimo e reiterado, com exposição pública e humilhação da empregada ao longo de três anos, resultando em incapacidade laboral temporária. O salário contratual da ofendida era de R$ 1.600,00. O juízo entendeu que a reparação adequada, considerando a gravidade concreta do dano e o porte econômico da empresa — um grupo com faturamento bilionário —, seria de R$ 150.000,00. A empresa recorre sustentando que o art. 223-G, § 1º, IV, da CLT limita a condenação a cinquenta vezes o salário contratual, ou seja, R$ 80.000,00.\n\nPERGUNTA:\nO valor arbitrado pode ultrapassar o limite do art. 223-G, § 1º, IV, da CLT?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Sim, o valor arbitrado pode ultrapassar o limite previsto no art. 223-G, § 1º, IV, da CLT. O Supremo Tribunal Federal, no julgamento conjunto das ADIs 6050, 6069 e 6082, conferiu interpretação conforme a Constituição ao art. 223-G, § 1º, da CLT para assentar que os parâmetros tarifários nele previstos servem como critérios meramente orientadores da quantificação da indenização, e não como teto limitador absoluto. Desse modo, o magistrado trabalhista pode fixar condenação em montante superior aos limites legais tabelados para assegurar a reparação integral do dano extrapatrimonial, em atenção aos arts. 5º, V e X, da Constituição Federal.\",\n  \"citations\": [\n    \"STF ADI 6050\",\n    \"CLT art. 223-G, § 1º, IV\",\n    \"CF art. 5º, V\",\n    \"CF art. 5º, X\"\n  ],\n  \"reasoning\": \"Embora o texto do art. 223-G, § 1º, IV, da CLT institua um teto de cinquenta vezes o último salário contratual do ofendido, o STF fixou a tese com eficácia vinculante e erga omnes (ADIs 6050, 6069 e 6082) de que a tarifação legal do dano moral introduzida pela Lei 13.467/2017 tem natureza meramente pedagógica e indicativa, não impedindo a fixação judicial de quantia superior devidamente fundamentada no princípio da ampla e integral reparação.\"\n}",
+ "parsed": {
+  "answer": "Sim, o valor arbitrado pode ultrapassar o limite previsto no art. 223-G, § 1º, IV, da CLT. O Supremo Tribunal Federal, no julgamento conjunto das ADIs 6050, 6069 e 6082, conferiu interpretação conforme a Constituição ao art. 223-G, § 1º, da CLT para assentar que os parâmetros tarifários nele previstos servem como critérios meramente orientadores da quantificação da indenização, e não como teto limitador absoluto. Desse modo, o magistrado trabalhista pode fixar condenação em montante superior aos limites legais tabelados para assegurar a reparação integral do dano extrapatrimonial, em atenção aos arts. 5º, V e X, da Constituição Federal.",
+  "citations": [
+   "STF ADI 6050",
+   "CLT art. 223-G, § 1º, IV",
+   "CF art. 5º, V",
+   "CF art. 5º, X"
+  ],
+  "reasoning": "Embora o texto do art. 223-G, § 1º, IV, da CLT institua um teto de cinquenta vezes o último salário contratual do ofendido, o STF fixou a tese com eficácia vinculante e erga omnes (ADIs 6050, 6069 e 6082) de que a tarifação legal do dano moral introduzida pela Lei 13.467/2017 tem natureza meramente pedagógica e indicativa, não impedindo a fixação judicial de quantia superior devidamente fundamentada no princípio da ampla e integral reparação."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 569,
+  "output_tokens": 400,
+  "thought_tokens": 273,
+  "total_tokens": 1242
+ },
+ "finish_reason": "FinishReason.STOP"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "case_11_prescricao_aviso_previo",
+  "title": "Limitation periods and proportional notice, with arithmetic",
+  "reasoning_type": "multi_hop_arithmetic",
+  "difficulty": "hard",
+  "note": "Four documents must be combined and two numbers computed. No single retrieved chunk contains the answer.",
+  "facts": "Sandra foi admitida em 1º de março de 2012 e dispensada sem justa causa em 20 de setembro de 2021, sem cumprimento nem indenização do aviso prévio. Ela ajuizou reclamação trabalhista em 15 de junho de 2023, postulando diferenças salariais referentes a todo o período contratual e a indenização do aviso prévio proporcional.",
+  "question": "A ação está dentro do prazo? Quais parcelas estão prescritas? Quantos dias de aviso prévio indenizado são devidos?",
+  "gold": {
+    "answer": "A ação está no prazo. A prescrição bienal (art. 11 da CLT e art. 7º, XXIX, da CF) exigia o ajuizamento até 20/09/2023, e a ação foi proposta em 15/06/2023. Quanto à prescrição quinquenal, estão prescritas as parcelas vencidas antes de 15/06/2018, ou seja, cinco anos contados retroativamente do ajuizamento; são exigíveis apenas as diferenças salariais de 15/06/2018 a 20/09/2021. Quanto ao aviso prévio, aplica-se a Lei 12.506/2011: 30 dias mais 3 dias por ano de serviço na mesma empresa. Sandra contava 9 anos completos (01/03/2012 a 01/03/2021), o que resulta em 30 + 27 = 57 dias de aviso prévio indenizado.",
+    "required_citations": [
+      "CLT art. 11",
+      "Lei 12.506/2011"
+    ],
+    "supporting_citations": [
+      "CF art. 7º XXIX",
+      "CLT art. 487"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes the claim was filed in time (within two years of 20 Sep 2021).",
+        "weight": 2
+      },
+      {
+        "id": "r2",
+        "claim": "Computes the five-year cut-off as 15 June 2018 and declares earlier instalments time-barred.",
+        "weight": 3
+      },
+      {
+        "id": "r3",
+        "claim": "Computes the notice period as 57 days (30 + 3 x 9).",
+        "weight": 3
+      },
+      {
+        "id": "r4",
+        "claim": "Distinguishes the two-year (bienal) and five-year (quinquenal) limitation rules rather than conflating them.",
+        "weight": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "PASSAGENS RECUPERADAS:\n--- passage 1 ---\n[CLT art. 58 §2º] (clt_excerpts)\n[CLT art. 58 §2º] Commuting time (horas in itinere) — post-reform wording\nStatus: in force since 11 Nov 2017 (Lei 13.467/2017). **Displaces** the prior case law for\nCross-refs: [Súmula 90 TST], [Lei 13.467/2017 vigência]\ncontracts and periods after that date.\n\nO tempo despendido pelo empregado desde a sua residência até a efetiva ocupação do posto de trabalho\ne para o seu retorno, caminhando ou por qualquer meio de transporte, inclusive o fornecido pelo\nempregador, não será computado na jornada de trabalho, por não ser tempo à disposição do empregador.\n\n> **Temporal note.** Before 11 Nov 2017 the opposite rule applied (old art. 58 §2º plus\n> [Súmula 90 TST]): commuting on employer-provided transport to a site that was hard to reach or\n> unserved by public transport *was* counted as working time. Contracts straddling that date must be\n> split into two periods.\n\n--- passage 2 ---\n[CF art. 7º XXIX] (precedentes_vinculantes)\n[CF art. 7º XXIX] Constitutional limitation period\nStatus: in force\nCross-refs: [CLT art. 11]\nSão direitos dos trabalhadores urbanos e rurais: ação, quanto aos créditos resultantes das relações\nde trabalho, com prazo prescricional de **cinco anos** para os trabalhadores urbanos e rurais, **até\no limite de dois anos após a extinção do contrato de trabalho**.\n\n--- passage 3 ---\n[Súmula 437 TST] (sumulas_tst)\n[Súmula 437 TST] Intra-shift break — pre-reform rule\nStatus: **superseded for facts on or after 11 Nov 2017** by [CLT art. 71] § 4º.\nCross-refs: [CLT art. 71], [Lei 13.467/2017 vigência]\nStill governs earlier periods.\n\nI — Após a edição da Lei 8.923/94, a não concessão ou a concessão parcial do intervalo intrajornada\nmínimo para repouso e alimentação implica o pagamento **total do período correspondente**, e não\napenas daquele suprimido, com acréscimo de, no mínimo, 50% sobre o valor da remuneração da hora\nnormal de trabalho.\n\nIII — Possui **natureza salarial** a parcela prevista no art. 71, § 4º, da CLT, repercutindo, pois,\nno cálculo de outras parcelas.\n\n> **Temporal note.** Post-reform the statute reverses both points: only the suppressed portion is\n> owed, and its nature is indemnificatory (no integrations).\n\n--- passage 4 ---\n[Princípio da primazia da realidade] (precedentes_vinculantes)\n[Princípio da primazia da realidade] Substance over form\nStatus: general principle, in force\nCross-refs: [CLT art. 3º], [CLT art. 442-B], [CLT art. 62]\nNo Direito do Trabalho, os fatos prevalecem sobre a forma documental. A denominação dada pelas partes\nao contrato, o enquadramento formal anotado em CTPS ou a assinatura de um contrato de prestação de\nserviços autônomos **não afastam o vínculo de emprego** se, no plano dos fatos, estiverem presentes\npessoalidade, não eventualidade, onerosidade e subordinação.\n\nO mesmo princípio governa o enquadramento no art. 62 da CLT: o que importa é a existência **real** de\ncontrole de jornada, não a anotação formal ou a nomenclatura do cargo.\n\n--- passage 5 ---\n[Súmula 366 TST] (sumulas_tst)\n[Súmula 366 TST] Residual minutes\nStatus: in force\nCross-refs: [CLT art. 58 §1º]\nNão serão descontadas nem computadas como jornada extraordinária as variações de horário do registro\nde ponto não excedentes de cinco minutos, observado o limite máximo de dez minutos diários.\n**Se ultrapassado esse limite, será considerada como extra a totalidade do tempo** que exceder a\njornada normal, pois configurado tempo à disposição do empregador.\n\n--- passage 6 ---\n[Lei 13.467/2017 vigência] (precedentes_vinculantes)\n[Lei 13.467/2017 vigência] Commencement of the 2017 labour reform\nStatus: in force\nCross-refs: [CLT art. 71], [CLT art. 468], [CLT art. 58 §2º], [CLT art. 74 §2º], [Súmula 437 TST], [Súmula 372 TST], [Súmula 90 TST]\nA Lei 13.467/2017 (Reforma Trabalhista) foi publicada em 14 de julho de 2017 e entrou em vigor em\n**11 de novembro de 2017**, após o período de vacatio legis de 120 dias.\n\n**Operative rule for this corpus.** As alterações de direito material aplicam-se aos **fatos\nocorridos a partir de 11/11/2017**. Contratos iniciados antes dessa data e ainda vigentes depois\ndela devem ser analisados em **dois períodos distintos**: até 10/11/2017 aplica-se o regime anterior\n(inclusive as súmulas então vigentes); de 11/11/2017 em diante aplica-se a nova redação legal.\n\n> Whenever a case in this benchmark spans that date, the correct answer is almost always a\n> **split**, not a single regime.\n\nFATOS:\nJoana foi admitida em 10 de março de 2015 em uma fábrica situada em zona rural, não servida por transporte público regular. A empresa sempre forneceu ônibus fretado para o deslocamento dos empregados, gastando-se 50 minutos na ida e 50 minutos na volta. O contrato foi encerrado por dispensa sem justa causa em 31 de agosto de 2021. Joana pede o cômputo de todo o tempo de percurso como jornada de trabalho, ao longo de todo o contrato.\n\nPERGUNTA:\nO tempo de deslocamento deve ser computado na jornada? Em relação a qual período?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou are given a set of passages retrieved from the corpus. Answer from those passages alone.\n\nIf the retrieved passages are not sufficient to settle the question — for instance because they\npoint to a provision you were not given — say so explicitly in your answer rather than guessing.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"O tempo de deslocamento deve ser computado na jornada apenas em relação ao período trabalhado até 10/11/2017. Para o período a partir de 11/11/2017 até a rescisão contratual (31/08/2021), o tempo de percurso não deve ser computado. Em virtude da vigência da Lei 13.467/2017, contratos que abrangem a alteração legislativa sofrem cisão de regimes: até 10/11/2017 prevalecia o cômputo das horas in itinere quando o transporte era fornecido pelo empregador para local não servido por transporte público regular; contudo, a partir de 11/11/2017, o tempo despendido até o posto de trabalho, inclusive em condução fornecida pelo empregador, não é considerado tempo à disposição nem integra a jornada.\",\n  \"citations\": [\n    \"CLT art. 58 §2º\",\n    \"Lei 13.467/2017 vigência\"\n  ],\n  \"reasoning\": \"A Lei 13.467/2017 entrou em vigor em 11/11/2017, aplicando-se de imediato aos fatos posteriores, o que exige a divisão temporal do contrato. A redação pós-reforma do art. 58, § 2º, da CLT expressamente exclui o tempo de trajeto da jornada de trabalho, mesmo se fornecido transporte pelo empregador, suplantando a regra anterior que admitia as horas in itinere até 10/11/2017.\"\n}",
+ "parsed": {
+  "answer": "O tempo de deslocamento deve ser computado na jornada apenas em relação ao período trabalhado até 10/11/2017. Para o período a partir de 11/11/2017 até a rescisão contratual (31/08/2021), o tempo de percurso não deve ser computado. Em virtude da vigência da Lei 13.467/2017, contratos que abrangem a alteração legislativa sofrem cisão de regimes: até 10/11/2017 prevalecia o cômputo das horas in itinere quando o transporte era fornecido pelo empregador para local não servido por transporte público regular; contudo, a partir de 11/11/2017, o tempo despendido até o posto de trabalho, inclusive em condução fornecida pelo empregador, não é considerado tempo à disposição nem integra a jornada.",
+  "citations": [
+   "CLT art. 58 §2º",
+   "Lei 13.467/2017 vigência"
+  ],
+  "reasoning": "A Lei 13.467/2017 entrou em vigor em 11/11/2017, aplicando-se de imediato aos fatos posteriores, o que exige a divisão temporal do contrato. A redação pós-reforma do art. 58, § 2º, da CLT expressamente exclui o tempo de trajeto da jornada de trabalho, mesmo se fornecido transporte pelo empregador, suplantando a regra anterior que admitia as horas in itinere até 10/11/2017."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1916,
+  "output_tokens": 386,
+  "thought_tokens": 720,
+  "total_tokens": 3022
+ },
+ "finish_reason": "FinishReason.STOP"
+}

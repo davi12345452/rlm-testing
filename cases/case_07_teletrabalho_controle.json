@@ -1,0 +1,42 @@
+{
+  "id": "case_07_teletrabalho_controle",
+  "title": "Remote work labelled 'by output' but subject to real time control",
+  "reasoning_type": "form_vs_substance",
+  "difficulty": "medium",
+  "note": "Requires combining art. 62 III with the substance-over-form principle, which lives in a third document and never uses the word 'teletrabalho' in the facts' vocabulary.",
+  "facts": "Bruno foi contratado em 2022 em regime de teletrabalho. O contrato escrito diz expressamente que a prestação se dá 'por produção', com metas mensais de atendimentos, e que o empregado não se sujeita a controle de jornada, com enquadramento no art. 62, III, da CLT anotado no registro de empregados. Na prática, Bruno era obrigado a permanecer logado em sistema corporativo das 9h às 18h, com registro automático de login, logout e tempo de inatividade, sofrendo advertência quando ficava mais de dez minutos ausente. Reuniões diárias obrigatórias ocorriam às 9h. Bruno pede horas extras.",
+  "question": "Bruno está validamente enquadrado no art. 62, III, da CLT? As horas extras são devidas?",
+  "gold": {
+    "answer": "Não. O enquadramento no art. 62, III, da CLT pressupõe prestação real por produção ou tarefa, sem controle de jornada. Pelo princípio da primazia da realidade, a qualificação formal do contrato e a anotação no registro de empregados não prevalecem sobre os fatos: o registro automático de login e logout, o monitoramento de inatividade, as advertências e as reuniões em horário fixo demonstram controle efetivo e telemático da jornada. Afastado o enquadramento, aplicam-se as regras gerais de duração do trabalho e as horas extras são devidas. Os registros eletrônicos estão em poder da empresa, a quem cabe apresentá-los, tratando-se de fato impeditivo do direito (art. 818, II, da CLT).",
+    "required_citations": [
+      "CLT art. 62",
+      "Princípio da primazia da realidade"
+    ],
+    "supporting_citations": [
+      "CLT art. 818"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes the art. 62, III classification does NOT hold.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Reasons from substance over form (primazia da realidade), not from the contract's wording.",
+        "weight": 2
+      },
+      {
+        "id": "r3",
+        "claim": "Identifies the concrete facts showing real time control (login/logout logs, inactivity monitoring, fixed meetings).",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Concludes overtime IS owed.",
+        "weight": 2
+      }
+    ]
+  }
+}

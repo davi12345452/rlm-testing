@@ -1,0 +1,53 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "PASSAGENS RECUPERADAS:\n--- passage 1 ---\n[Lei 12.506/2011] (precedentes_vinculantes)\n[Lei 12.506/2011] Proportional notice period\nStatus: in force\nCross-refs: [CLT art. 487]\nO aviso prévio será concedido na proporção de **trinta dias** aos empregados que contem até um ano de\nserviço na mesma empresa, **acrescido de três dias por ano de serviço prestado na mesma empresa, até\no máximo de sessenta dias, perfazendo um total de até noventa dias**.\n\nExemplo de cálculo: 7 anos completos de casa → 30 + (3 × 7) = 51 dias. O acréscimo é devido apenas ao\nempregado, não ao empregador que pede demissão.\n\n--- passage 2 ---\n[Súmula 437 TST] (sumulas_tst)\n[Súmula 437 TST] Intra-shift break — pre-reform rule\nStatus: **superseded for facts on or after 11 Nov 2017** by [CLT art. 71] § 4º.\nCross-refs: [CLT art. 71], [Lei 13.467/2017 vigência]\nStill governs earlier periods.\n\nI — Após a edição da Lei 8.923/94, a não concessão ou a concessão parcial do intervalo intrajornada\nmínimo para repouso e alimentação implica o pagamento **total do período correspondente**, e não\napenas daquele suprimido, com acréscimo de, no mínimo, 50% sobre o valor da remuneração da hora\nnormal de trabalho.\n\nIII — Possui **natureza salarial** a parcela prevista no art. 71, § 4º, da CLT, repercutindo, pois,\nno cálculo de outras parcelas.\n\n> **Temporal note.** Post-reform the statute reverses both points: only the suppressed portion is\n> owed, and its nature is indemnificatory (no integrations).\n\n--- passage 3 ---\n[CF art. 7º XXIX] (precedentes_vinculantes)\n[CF art. 7º XXIX] Constitutional limitation period\nStatus: in force\nCross-refs: [CLT art. 11]\nSão direitos dos trabalhadores urbanos e rurais: ação, quanto aos créditos resultantes das relações\nde trabalho, com prazo prescricional de **cinco anos** para os trabalhadores urbanos e rurais, **até\no limite de dois anos após a extinção do contrato de trabalho**.\n\n--- passage 4 ---\n[Súmula 212 TST] (sumulas_tst)\n[Súmula 212 TST] Presumption of contract continuity\nStatus: in force\nCross-refs: [CLT art. 818]\nO ônus de provar o término do contrato de trabalho, quando negados a prestação de serviço e o\ndespedimento, é do empregador, pois o princípio da continuidade da relação de emprego constitui\npresunção favorável ao empregado.\n\n--- passage 5 ---\n[CLT art. 483] (clt_excerpts)\n[CLT art. 483] Constructive dismissal (rescisão indireta)\nStatus: in force\nCross-refs: [Súmula 13 TST], [CLT art. 477 §6º e §8º], [CLT art. 482]\nO empregado poderá considerar rescindido o contrato e pleitear a devida indenização quando:\n\na) forem exigidos serviços superiores às suas forças, defesos por lei, contrários aos bons costumes,\nou alheios ao contrato;\nb) for tratado pelo empregador ou por seus superiores hierárquicos com rigor excessivo;\nc) correr perigo manifesto de mal considerável;\nd) **não cumprir o empregador as obrigações do contrato**;\ne) praticar o empregador ou seus prepostos, contra ele ou pessoas de sua família, ato lesivo da honra\ne boa fama;\nf) o empregador ou seus prepostos ofenderem-no fisicamente, salvo em caso de legítima defesa;\ng) o empregador reduzir o seu trabalho, sendo este por peça ou tarefa, de forma a afetar\nsensivelmente a importância dos salários.\n\n§ 3º Nas hipóteses das letras **d** e **g**, poderá o empregado pleitear a rescisão de seu contrato\nde trabalho e o pagamento das respectivas indenizações, **permanecendo ou não no serviço até final\ndecisão do processo**.\n\n--- passage 6 ---\n[STF ADI 6050] (precedentes_vinculantes)\n[STF ADI 6050] Statutory bands for non-pecuniary damages\nStatus: binding, with general effect\nCross-refs: [CLT art. 223-G §1º]\nO Supremo Tribunal Federal deu **interpretação conforme a Constituição** aos incisos do art. 223-G,\n§ 1º, da CLT, fixando que os critérios de quantificação ali previstos constituem **parâmetros\norientativos** para a fixação da indenização por dano extrapatrimonial.\n\n**Operative rule.** Os valores indicados **não funcionam como teto absoluto**. O juiz pode arbitrar\nindenização superior ao limite do inciso aplicável, desde que o faça de forma fundamentada,\nobservados os princípios da razoabilidade, da proporcionalidade e da reparação integral, e\nconsiderando a gravidade concreta do dano e a capacidade econômica do ofensor.\n\nFATOS:\nSandra foi admitida em 1º de março de 2012 e dispensada sem justa causa em 20 de setembro de 2021, sem cumprimento nem indenização do aviso prévio. Ela ajuizou reclamação trabalhista em 15 de junho de 2023, postulando diferenças salariais referentes a todo o período contratual e a indenização do aviso prévio proporcional.\n\nPERGUNTA:\nA ação está dentro do prazo? Quais parcelas estão prescritas? Quantos dias de aviso prévio indenizado são devidos?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou are given a set of passages retrieved from the corpus. Answer from those passages alone.\n\nIf the retrieved passages are not sufficient to settle the question — for instance because they\npoint to a provision you were not given — say so explicitly in your answer rather than guessing.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Sim, a ação trabalhista foi ajuizada dentro do prazo bienal constitucional, pois entre a rescisão (20/09/2021) e o ajuizamento da reclamatória (15/06/2023) transcorreram menos de dois anos. Quanto à prescrição quinquenal, encontram-se prescritas as pretensões pecuniárias anteriores a 15 de junho de 2018 (cinco anos contados retroativamente do ajuizamento da ação). Em relação ao aviso prévio indenizado proporcional, são devidos 57 dias, calculados com base em 9 anos completos de vínculo empregatício (30 dias básicos acrescidos de 27 dias, à razão de 3 dias por ano completo trabalhado).\",\n  \"citations\": [\n    \"CF art. 7º XXIX\",\n    \"Lei 12.506/2011\"\n  ],\n  \"reasoning\": \"A admissibilidade temporal da ação e a extensão das parcelas exigíveis são disciplinadas pelo art. 7º, XXIX, da CF, que fixa a prescrição bienal extintiva contada do término do liame de emprego e a prescrição quinquenal a contar da data de propositura da ação. Para a apuração da duração do aviso prévio, incide a Lei 12.506/2011, que estipula o patamar básico de 30 dias com o adicional de 3 dias por ano de serviço completo prestado à mesma empresa.\"\n}",
+ "parsed": {
+  "answer": "Sim, a ação trabalhista foi ajuizada dentro do prazo bienal constitucional, pois entre a rescisão (20/09/2021) e o ajuizamento da reclamatória (15/06/2023) transcorreram menos de dois anos. Quanto à prescrição quinquenal, encontram-se prescritas as pretensões pecuniárias anteriores a 15 de junho de 2018 (cinco anos contados retroativamente do ajuizamento da ação). Em relação ao aviso prévio indenizado proporcional, são devidos 57 dias, calculados com base em 9 anos completos de vínculo empregatício (30 dias básicos acrescidos de 27 dias, à razão de 3 dias por ano completo trabalhado).",
+  "citations": [
+   "CF art. 7º XXIX",
+   "Lei 12.506/2011"
+  ],
+  "reasoning": "A admissibilidade temporal da ação e a extensão das parcelas exigíveis são disciplinadas pelo art. 7º, XXIX, da CF, que fixa a prescrição bienal extintiva contada do término do liame de emprego e a prescrição quinquenal a contar da data de propositura da ação. Para a apuração da duração do aviso prévio, incide a Lei 12.506/2011, que estipula o patamar básico de 30 dias com o adicional de 3 dias por ano de serviço completo prestado à mesma empresa."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1771,
+  "output_tokens": 351,
+  "thought_tokens": 777,
+  "total_tokens": 2899
+ },
+ "finish_reason": "FinishReason.STOP"
+}

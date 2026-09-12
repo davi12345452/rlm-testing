@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nSandra foi admitida em 1º de março de 2012 e dispensada sem justa causa em 20 de setembro de 2021, sem cumprimento nem indenização do aviso prévio. Ela ajuizou reclamação trabalhista em 15 de junho de 2023, postulando diferenças salariais referentes a todo o período contratual e a indenização do aviso prévio proporcional.\n\nQUESTION:\nA ação está dentro do prazo? Quais parcelas estão prescritas? Quantos dias de aviso prévio indenizado são devidos?\n\nREFERENCE ANSWER (gold):\nA ação está no prazo. A prescrição bienal (art. 11 da CLT e art. 7º, XXIX, da CF) exigia o ajuizamento até 20/09/2023, e a ação foi proposta em 15/06/2023. Quanto à prescrição quinquenal, estão prescritas as parcelas vencidas antes de 15/06/2018, ou seja, cinco anos contados retroativamente do ajuizamento; são exigíveis apenas as diferenças salariais de 15/06/2018 a 20/09/2021. Quanto ao aviso prévio, aplica-se a Lei 12.506/2011: 30 dias mais 3 dias por ano de serviço na mesma empresa. Sandra contava 9 anos completos (01/03/2012 a 01/03/2021), o que resulta em 30 + 27 = 57 dias de aviso prévio indenizado.\n\nRUBRIC:\n- r1 (weight 2): Concludes the claim was filed in time (within two years of 20 Sep 2021).\n- r2 (weight 3): Computes the five-year cut-off as 15 June 2018 and declares earlier instalments time-barred.\n- r3 (weight 3): Computes the notice period as 57 days (30 + 3 x 9).\n- r4 (weight 1): Distinguishes the two-year (bienal) and five-year (quinquenal) limitation rules rather than conflating them.\n\nCANDIDATE ANSWER TO GRADE:\n1. Tempestividade da ação: A ação está dentro do prazo bienal, pois foi ajuizada em 15/06/2023, menos de dois anos após a rescisão contratual ocorrida em 20/09/2021, atendendo ao limite estabelecido no art. 7º, XXIX, da Constituição Federal e no art. 11 da CLT.\n\n2. Parcelas prescritas: Aplica-se a prescrição quinquenal contada regressivamente do ajuizamento da ação (15/06/2023). Portanto, estão prescritas todas as pretensões e parcelas anteriores a 15 de junho de 2018, remanescendo exigíveis apenas os créditos devidos a partir de 15/06/2018.\n\n3. Quantidade de dias de aviso prévio indenizado: São devidos 57 dias de aviso prévio indenizado. Sandra foi admitida em 01/03/2012 e dispensada em 20/09/2021, totalizando 9 anos completos de serviço. Conforme a Lei 12.506/2011 e o art. 487 da CLT, são assegurados 30 dias básicos acrescidos de 3 dias por ano completo de serviço trabalhado (30 + 9 × 3 = 57 dias).\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCF art. 7º XXIX, CLT art. 11, CLT art. 487, Lei 12.506/2011\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly states that the claim was filed within the two-year limit, as it was filed on 15/06/2023, less than two years after the termination on 20/09/2021.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly calculates the five-year prescription period backwards from the filing date, establishing the cut-off date as 15 June 2018 and declaring earlier claims time-barred.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate correctly calculates the notice period as 57 days, explicitly showing the math (30 + 9 x 3).\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate clearly distinguishes between the two-year (bienal) limitation for filing the lawsuit and the five-year (quinquenal) limitation for the claims.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate correctly states that the claim was filed within the two-year limit, as it was filed on 15/06/2023, less than two years after the termination on 20/09/2021."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate correctly calculates the five-year prescription period backwards from the filing date, establishing the cut-off date as 15 June 2018 and declaring earlier claims time-barred."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate correctly calculates the notice period as 57 days, explicitly showing the math (30 + 9 x 3)."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "The candidate clearly distinguishes between the two-year (bienal) limitation for filing the lawsuit and the five-year (quinquenal) limitation for the claims."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1053,
+  "output_tokens": 307,
+  "thought_tokens": 406,
+  "total_tokens": 1766
+ },
+ "finish_reason": "FinishReason.STOP"
+}

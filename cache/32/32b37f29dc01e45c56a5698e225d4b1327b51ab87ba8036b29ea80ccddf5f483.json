@@ -1,0 +1,84 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nA convenção coletiva da categoria de João, vigente de 2018 a 2019, previa auxílio-alimentação mensal de R$ 500,00. Expirado o prazo de vigência do instrumento em dezembro de 2019 e não celebrado novo acordo, a empresa suprimiu o benefício a partir de janeiro de 2020. João ajuizou ação em 2022 pedindo o restabelecimento do auxílio, sustentando que a cláusula normativa aderiu ao seu contrato individual de trabalho e só poderia ser suprimida por nova negociação coletiva.\n\nPERGUNTA:\nA cláusula normativa expirada continua produzindo efeitos no contrato individual de João?\n\nWHAT YOU HAVE DONE SO FAR:\nTHOUGHT: I need to check the available documents to locate provisions on the ultrativity of collective agreements, specifically CLT art. 614, § 3º, Súmula 277 TST, and relevant STF decisions (ADPF 323).\nACTION: list_documents()\nOBSERVATION:\nDocuments in the corpus:\n- clt_excerpts: Consolidação das Leis do Trabalho (CLT) — Curated Excerpts (22 sections)\n- precedentes_vinculantes: Overriding Norms: Constitutional Rulings and Transitional Rules (7 sections)\n- sumulas_tst: Súmulas do Tribunal Superior do Trabalho (TST) — Curated Excerpts (16 sections)\n\nTHOUGHT: I will examine the outline of precedentes_vinculantes to see constitutional rulings on ultrativity (e.g., ADPF 323) or collective agreements.\nACTION: outline(doc_id='precedentes_vinculantes')\nOBSERVATION:\n# precedentes_vinculantes\n  [Lei 13.467/2017 vigência] Commencement of the 2017 labour reform — status: in force\n  [Lei 12.506/2011] Proportional notice period — status: in force\n  [CF art. 7º XXIX] Constitutional limitation period — status: in force\n  [STF ADI 5766] Legal aid and litigation costs in the labour courts — status: binding, with general effect (*erga omnes*)\n  [STF ADPF 323] Ultra-activity of collective agreements — status: binding, with general effect\n  [STF ADI 6050] Statutory bands for non-pecuniary damages — status: binding, with general effect\n  [Princípio da primazia da realidade] Substance over form — status: general principle, in force\n\nTHOUGHT: I will read STF ADPF 323 to understand the binding precedent on the ultra-activity of collective agreements.\nACTION: read(key='STF ADPF 323')\nOBSERVATION:\n--- precedentes_vinculantes (lines 65-76) ---\n[STF ADPF 323] Ultra-activity of collective agreements\nStatus: binding, with general effect\nCross-refs: [Súmula 277 TST], [CLT art. 611-A]\nO Supremo Tribunal Federal declarou a **inconstitucionalidade da ultratividade** das normas de acordos\ne convenções coletivas, fixando que as cláusulas normativas **não aderem definitivamente aos\ncontratos individuais** de trabalho.\n\n**Operative rule.** Expirado o prazo de vigência do instrumento coletivo e não havendo novo acordo, a\ncláusula normativa **deixa de produzir efeitos**, salvo se incorporada por outro fundamento jurídico\nautônomo. [Súmula 277 TST] não pode ser aplicada como fundamento para manter a cláusula.\n\nActions remaining before you are forced to answer: 9.",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou do not receive the corpus. You explore it, one action per turn, using these tools:\n\nlist_documents()            -> the documents in the corpus\noutline(doc_id=\"\")          -> every section key, title and validity status (cheap, start here)\ngrep(pattern, doc_id=\"\")    -> case-insensitive regex over section text, returns keys + snippets\nread(key)                   -> the full text of one section, by its citation key\nfollow(key)                 -> the sections cross-referenced by a section, with their status\n\nplus two control actions:\n\nspawn(sub_question, focus_keys=[])  -> run a fresh copy of yourself on a self-contained\n                                       sub-question, starting from the given section keys. It\n                                       explores on its own and returns a short conclusion with\n                                       citations. Use it when a sub-problem would otherwise force\n                                       you to read several long sections you do not need in full.\nfinish(citations)                  -> stop investigating. You will then be asked to write the\n                                       final answer from your transcript, so finish only once you\n                                       can support every part of it from sections you have read.\n\nHow to work:\n- Start with outline() to see every section key and its validity status. It is cheap and it is the\n  map. Do not grep blindly before you have seen the map.\n- When a section looks relevant, read() it, then follow() it. A cross-reference is the corpus\n  telling you that another provision modifies or completes this one; ignoring it is how you get a\n  confidently wrong answer.\n- Delegate with spawn when a sub-question is separable, for example one period of a contract that\n  straddles a legal reform.\n- Do not finish while an unread cross-reference could change the outcome.\n\nReturn exactly one action per turn, as JSON matching the schema. Fill only the fields that action\nneeds.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "thought": {
+     "type": "string",
+     "description": "One or two sentences: what you now know and what you still need."
+    },
+    "action": {
+     "type": "string",
+     "enum": [
+      "list_documents",
+      "outline",
+      "grep",
+      "read",
+      "follow",
+      "spawn",
+      "finish"
+     ]
+    },
+    "doc_id": {
+     "type": "string",
+     "description": "Argument for outline/grep."
+    },
+    "pattern": {
+     "type": "string",
+     "description": "Argument for grep."
+    },
+    "key": {
+     "type": "string",
+     "description": "Argument for read/follow."
+    },
+    "sub_question": {
+     "type": "string",
+     "description": "Argument for spawn."
+    },
+    "focus_keys": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for spawn: section keys the sub-agent should start from."
+    },
+    "answer": {
+     "type": "string",
+     "description": "REQUIRED when action is finish: the complete legal answer in Brazilian Portuguese. Never finish with this field empty."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Argument for finish: exact corpus citation keys."
+    }
+   },
+   "required": [
+    "thought",
+    "action"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"thought\": \"I will check the outline of clt_excerpts to see if CLT art. 614, § 3º or art. 611-A is present and relevant.\",\n  \"action\": \"outline\",\n  \"doc_id\": \"clt_excerpts\"\n}",
+ "parsed": {
+  "thought": "I will check the outline of clt_excerpts to see if CLT art. 614, § 3º or art. 611-A is present and relevant.",
+  "action": "outline",
+  "doc_id": "clt_excerpts"
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 1557,
+  "output_tokens": 73,
+  "thought_tokens": 89,
+  "total_tokens": 1719
+ },
+ "finish_reason": "FinishReason.STOP"
+}

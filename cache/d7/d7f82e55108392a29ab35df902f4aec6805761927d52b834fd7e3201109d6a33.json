@@ -1,0 +1,102 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.1-pro-preview",
+  "prompt": "FACTS:\nJoana foi admitida em 10 de março de 2015 em uma fábrica situada em zona rural, não servida por transporte público regular. A empresa sempre forneceu ônibus fretado para o deslocamento dos empregados, gastando-se 50 minutos na ida e 50 minutos na volta. O contrato foi encerrado por dispensa sem justa causa em 31 de agosto de 2021. Joana pede o cômputo de todo o tempo de percurso como jornada de trabalho, ao longo de todo o contrato.\n\nQUESTION:\nO tempo de deslocamento deve ser computado na jornada? Em relação a qual período?\n\nREFERENCE ANSWER (gold):\nO contrato deve ser dividido em dois períodos pela data de vigência da Lei 13.467/2017 (11/11/2017). De 10/03/2015 a 10/11/2017, aplica-se a Súmula 90, I, do TST: o local é de difícil acesso e não servido por transporte público regular, e o transporte era fornecido pelo empregador, de modo que as 100 minutos diários são computáveis na jornada, gerando horas extras se ultrapassada a jornada normal. De 11/11/2017 até 31/08/2021, aplica-se a nova redação do art. 58, § 2º, da CLT: o tempo de deslocamento não é computado na jornada, ainda que em transporte fornecido pelo empregador. O pedido, portanto, é parcialmente procedente.\n\nRUBRIC:\n- r1 (weight 3): Splits the contract into two periods at 11 Nov 2017.\n- r2 (weight 2): Grants commuting time for the pre-reform period under Súmula 90 TST.\n- r3 (weight 2): Denies commuting time for the post-reform period under the new art. 58 §2º.\n- r4 (weight 1): Concludes the claim is partially granted rather than fully granted or fully denied.\n\nCANDIDATE ANSWER TO GRADE:\nO tempo de deslocamento deve ser computado na jornada de trabalho apenas em relação ao período de 10 de março de 2015 até 10 de novembro de 2017. A partir de 11 de novembro de 2017 (entrada em vigor da Reforma Trabalhista, Lei nº 13.467/2017), o tempo de percurso não é mais considerado tempo à disposição do empregador e, portanto, não é computado na jornada de trabalho até a rescisão contratual em 31 de agosto de 2021 (ressalvada eventual pronúncia de prescrição quinquenal a contar do ajuizamento da ação).\n\nCITATIONS GIVEN BY THE CANDIDATE:\nCLT art. 58, § 2º, Súmula 90 TST\n",
+  "system": "You are grading an answer to a Brazilian labour-law question against a reference answer and a fixed\nrubric. You are strict, literal and consistent.\n\nRules:\n- Grade only against the rubric items you are given. Do not invent criteria.\n- An item is 'met' only if the answer actually states or clearly entails it. Mentioning a provision\n  without drawing its consequence is 'partial', not 'met'.\n- Style, length and fluency are irrelevant. A terse correct answer outranks an eloquent wrong one.\n- 'contradicts_gold' is true when the answer's bottom line is the opposite of the reference\n  answer's — for example granting a claim the reference denies.\n- The overall verdict is about the bottom line, not about how many rubric items were hit.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string",
+        "enum": [
+         "r1",
+         "r2",
+         "r3",
+         "r4"
+        ]
+       },
+       "verdict": {
+        "type": "string",
+        "enum": [
+         "met",
+         "partial",
+         "missed"
+        ]
+       },
+       "justification": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "id",
+       "verdict",
+       "justification"
+      ]
+     }
+    },
+    "verdict": {
+     "type": "string",
+     "enum": [
+      "correct",
+      "partially_correct",
+      "incorrect"
+     ],
+     "description": "Overall verdict on the bottom line of the answer."
+    },
+    "contradicts_gold": {
+     "type": "boolean",
+     "description": "True if the answer reaches a conclusion opposite to the gold answer."
+    }
+   },
+   "required": [
+    "items",
+    "verdict",
+    "contradicts_gold"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"items\": [\n    {\n      \"id\": \"r1\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate explicitly splits the contract into two periods, before and after 11 November 2017.\"\n    },\n    {\n      \"id\": \"r2\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate grants the commuting time for the period from 10 March 2015 to 10 November 2017 and cites Súmula 90 TST.\"\n    },\n    {\n      \"id\": \"r3\",\n      \"verdict\": \"met\",\n      \"justification\": \"The candidate denies the commuting time from 11 November 2017 onwards, citing the labor reform and art. 58, § 2º, of the CLT.\"\n    },\n    {\n      \"id\": \"r4\",\n      \"verdict\": \"met\",\n      \"justification\": \"By stating that the time should be computed 'only in relation to the period' before the reform, the candidate effectively concludes that the claim is partially granted.\"\n    }\n  ],\n  \"verdict\": \"correct\",\n  \"contradicts_gold\": false\n}",
+ "parsed": {
+  "items": [
+   {
+    "id": "r1",
+    "verdict": "met",
+    "justification": "The candidate explicitly splits the contract into two periods, before and after 11 November 2017."
+   },
+   {
+    "id": "r2",
+    "verdict": "met",
+    "justification": "The candidate grants the commuting time for the period from 10 March 2015 to 10 November 2017 and cites Súmula 90 TST."
+   },
+   {
+    "id": "r3",
+    "verdict": "met",
+    "justification": "The candidate denies the commuting time from 11 November 2017 onwards, citing the labor reform and art. 58, § 2º, of the CLT."
+   },
+   {
+    "id": "r4",
+    "verdict": "met",
+    "justification": "By stating that the time should be computed 'only in relation to the period' before the reform, the candidate effectively concludes that the claim is partially granted."
+   }
+  ],
+  "verdict": "correct",
+  "contradicts_gold": false
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 844,
+  "output_tokens": 287,
+  "thought_tokens": 859,
+  "total_tokens": 1990
+ },
+ "finish_reason": "FinishReason.STOP"
+}

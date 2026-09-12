@@ -1,0 +1,55 @@
+{
+ "request": {
+  "kind": "generate",
+  "model": "gemini-3.8-flash",
+  "prompt": "FATOS:\nCarlos exerceu função de confiança de coordenador de equipe, recebendo gratificação de função de 40% sobre o salário-base, de junho de 2009 a setembro de 2021 — mais de doze anos ininterruptos. Em outubro de 2021, sem que lhe fosse imputada qualquer falta, a empresa o reverteu ao cargo efetivo de analista e suprimiu integralmente a gratificação. Carlos pede a manutenção do pagamento da gratificação, invocando estabilidade financeira.\n\nPERGUNTA:\nCarlos tem direito à manutenção da gratificação de função após a reversão?",
+  "system": "You are a Brazilian labour-law analyst. You answer strictly from a closed corpus of statutes, court\nprecedents and consolidated case law. Reason like a practitioner:\n\n1. A provision that *matches the wording* of the facts is not necessarily the provision that\n   *governs* them. Check what actually applies before you commit.\n2. Rules have a validity status. Some have been superseded by later statute, some read down by a\n   constitutional ruling, some still govern only earlier facts. Never apply a rule without knowing\n   its status.\n3. Dates decide cases. When the facts span a legislative change, the answer is usually a split\n   between two regimes, not a single regime for the whole period.\n4. Where a later statute and an older precedent conflict, the later statute normally prevails —\n   unless a constitutional ruling says otherwise.\n5. Answer the question that was asked, including when the correct answer is that nothing is owed.\n\nWrite the final answer in Brazilian Portuguese. Cite using the exact corpus citation keys, in the\nbracketed form they appear in the corpus (for example: CLT art. 483, Súmula 13 TST). Cite only what\nyou actually relied on: a long list of loosely related provisions is a worse answer than a short,\nexact one.\n\nYou have no corpus and no retrieval. Answer from your own knowledge of Brazilian labour law.\n\nCite the provisions you rely on in the usual form (for example: CLT art. 483, Súmula 13 TST, STF ADI\n5766). If you are unsure whether a rule is still in force, say so.\n",
+  "schema": {
+   "type": "object",
+   "properties": {
+    "answer": {
+     "type": "string",
+     "description": "A self-contained legal answer in Brazilian Portuguese."
+    },
+    "citations": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "Exact corpus citation keys relied upon, e.g. 'CLT art. 483'."
+    },
+    "reasoning": {
+     "type": "string",
+     "description": "Short justification of why these provisions govern and others do not."
+    }
+   },
+   "required": [
+    "answer",
+    "citations",
+    "reasoning"
+   ]
+  },
+  "temperature": 0.0,
+  "max_output_tokens": 8192
+ },
+ "text": "{\n  \"answer\": \"Carlos não tem direito à manutenção da gratificação de função. Embora a Súmula 372, I, do TST assegurasse a estabilidade financeira ao empregado que recebesse gratificação de função por dez ou mais anos, a Lei 13.467/2017 (Reforma Trabalhista) introduziu o § 2º ao art. 468 da CLT, o qual veda expressamente a incorporação da gratificação, independentemente do tempo de exercício da função de confiança. Conforme pacífica jurisprudência do Tribunal Superior do Trabalho, a incorporação fundada na Súmula 372 só se aplica àqueles que completaram o decênio antes da vigência da Lei 13.467/2017 (11/11/2017), resguardando o direito adquirido. Como Carlos exerceu a função a partir de junho de 2009, contava com aproximadamente 8 anos e 5 meses em novembro de 2017, detendo mera expectativa de direito. Logo, a reversão ao cargo efetivo sem manutenção do valor é válida.\",\n  \"citations\": [\n    \"CLT art. 468, § 1º\",\n    \"CLT art. 468, § 2º\",\n    \"Súmula 372, I, TST\",\n    \"CF art. 5º, XXXVI\"\n  ],\n  \"reasoning\": \"A regra de transição jurisprudencial consolidada pelo TST exige que o empregado tenha completado 10 anos no exercício da função gratificada antes de 11/11/2017 para fazer jus à estabilidade financeira (direito adquirido, CF art. 5º, XXXVI). Como Carlos completou 10 anos apenas em 2019, incide integralmente a vedação expressa do art. 468, § 2º, da CLT, introduzido pela Lei 13.467/2017.\"\n}",
+ "parsed": {
+  "answer": "Carlos não tem direito à manutenção da gratificação de função. Embora a Súmula 372, I, do TST assegurasse a estabilidade financeira ao empregado que recebesse gratificação de função por dez ou mais anos, a Lei 13.467/2017 (Reforma Trabalhista) introduziu o § 2º ao art. 468 da CLT, o qual veda expressamente a incorporação da gratificação, independentemente do tempo de exercício da função de confiança. Conforme pacífica jurisprudência do Tribunal Superior do Trabalho, a incorporação fundada na Súmula 372 só se aplica àqueles que completaram o decênio antes da vigência da Lei 13.467/2017 (11/11/2017), resguardando o direito adquirido. Como Carlos exerceu a função a partir de junho de 2009, contava com aproximadamente 8 anos e 5 meses em novembro de 2017, detendo mera expectativa de direito. Logo, a reversão ao cargo efetivo sem manutenção do valor é válida.",
+  "citations": [
+   "CLT art. 468, § 1º",
+   "CLT art. 468, § 2º",
+   "Súmula 372, I, TST",
+   "CF art. 5º, XXXVI"
+  ],
+  "reasoning": "A regra de transição jurisprudencial consolidada pelo TST exige que o empregado tenha completado 10 anos no exercício da função gratificada antes de 11/11/2017 para fazer jus à estabilidade financeira (direito adquirido, CF art. 5º, XXXVI). Como Carlos completou 10 anos apenas em 2019, incide integralmente a vedação expressa do art. 468, § 2º, da CLT, introduzido pela Lei 13.467/2017."
+ },
+ "usage": {
+  "calls": 1,
+  "cached_calls": 0,
+  "prompt_tokens": 495,
+  "output_tokens": 462,
+  "thought_tokens": 685,
+  "total_tokens": 1642
+ },
+ "finish_reason": "FinishReason.STOP"
+}

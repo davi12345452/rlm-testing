@@ -1,0 +1,37 @@
+{
+  "id": "case_04_gratificacao_funcao",
+  "title": "Reversal from a position of trust after twelve years",
+  "reasoning_type": "statute_over_precedent",
+  "difficulty": "hard",
+  "note": "Súmula 372 is a near-verbatim match for the facts ('dez ou mais anos', 'estabilidade financeira'). Art. 468 §2º reverses it, and is reachable through the Cross-refs edge.",
+  "facts": "Carlos exerceu função de confiança de coordenador de equipe, recebendo gratificação de função de 40% sobre o salário-base, de junho de 2009 a setembro de 2021 — mais de doze anos ininterruptos. Em outubro de 2021, sem que lhe fosse imputada qualquer falta, a empresa o reverteu ao cargo efetivo de analista e suprimiu integralmente a gratificação. Carlos pede a manutenção do pagamento da gratificação, invocando estabilidade financeira.",
+  "question": "Carlos tem direito à manutenção da gratificação de função após a reversão?",
+  "gold": {
+    "answer": "Não. Embora a Súmula 372, I, do TST assegurasse a manutenção da gratificação percebida por dez anos ou mais, o art. 468, § 2º, da CLT, incluído pela Lei 13.467/2017 e vigente desde 11/11/2017, dispõe expressamente que a reversão ao cargo efetivo não assegura o direito à manutenção do pagamento da gratificação, que não se incorpora ao salário, independentemente do tempo de exercício da função. Como a reversão ocorreu em outubro de 2021, já sob a vigência da nova regra, prevalece o texto legal e o pedido é improcedente.",
+    "required_citations": [
+      "CLT art. 468",
+      "Lei 13.467/2017 vigência"
+    ],
+    "supporting_citations": [
+      "Súmula 372 TST"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes that Carlos is NOT entitled to keep the bonus.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Grounds the denial in art. 468 §2º of the CLT.",
+        "weight": 3
+      },
+      {
+        "id": "r3",
+        "claim": "Explicitly addresses Súmula 372 TST and explains why it does not govern (reversal occurred after 11 Nov 2017).",
+        "weight": 2
+      }
+    ]
+  }
+}

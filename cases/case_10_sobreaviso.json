@@ -1,0 +1,39 @@
+{
+  "id": "case_10_sobreaviso",
+  "title": "A corporate phone that does not create on-call status",
+  "reasoning_type": "negative_control",
+  "difficulty": "medium",
+  "note": "A negative control: the correct answer is that nothing is owed. Agents that over-trigger on retrieved text tend to grant the claim from Súmula 428 II while ignoring item I.",
+  "facts": "Tiago, técnico de manutenção, recebeu da empresa um telefone celular corporativo e um notebook. Não havia escala de plantão, nem obrigação de permanecer em casa ou em local determinado fora do expediente, nem exigência de resposta imediata. Nos três anos de contrato, Tiago foi acionado fora do horário de trabalho em quatro ocasiões, todas efetivamente pagas como horas extras. Tiago pede o pagamento de sobreaviso correspondente a todo o período não trabalhado, à razão de um terço da hora normal.",
+  "question": "Tiago tem direito ao adicional de sobreaviso pelo período em que portava o celular corporativo?",
+  "gold": {
+    "answer": "Não. Nos termos da Súmula 428, I, do TST, o uso de instrumentos telemáticos ou informatizados fornecidos pela empresa, por si só, não caracteriza o regime de sobreaviso. O item II exige que o empregado permaneça em regime de plantão ou equivalente, aguardando a qualquer momento o chamado para o serviço, com submissão a controle patronal e restrição concreta à liberdade de locomoção. Nos fatos narrados não havia escala de plantão, exigência de permanência em local determinado nem dever de resposta imediata, de modo que não se configura o sobreaviso. As quatro ocasiões de acionamento efetivo já foram remuneradas como horas extras, o que é o tratamento correto.",
+    "required_citations": [
+      "Súmula 428 TST"
+    ],
+    "supporting_citations": [],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Concludes that on-call pay (sobreaviso) is NOT owed.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Relies on item I of Súmula 428 (device alone is not enough).",
+        "weight": 2
+      },
+      {
+        "id": "r3",
+        "claim": "Explains why item II is not met: no plantão scale, no restriction on movement, no duty of immediate response.",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Notes that the four actual call-outs were correctly paid as overtime.",
+        "weight": 1
+      }
+    ]
+  }
+}

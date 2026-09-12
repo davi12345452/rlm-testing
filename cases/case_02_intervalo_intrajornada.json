@@ -1,0 +1,42 @@
+{
+  "id": "case_02_intervalo_intrajornada",
+  "title": "Partially suppressed meal break under the post-reform statute",
+  "reasoning_type": "temporal_override",
+  "difficulty": "medium",
+  "note": "Súmula 437 is the highest-similarity document for these facts and gives the wrong answer. The correct rule requires noticing that art. 71 §4º was rewritten and that the facts postdate 11 Nov 2017.",
+  "facts": "Rafael foi contratado em janeiro de 2021 como operador de produção, com jornada de 8 horas diárias. Durante todo o contrato, encerrado em dezembro de 2023, a empresa concedeu apenas 30 minutos de intervalo para repouso e alimentação, em vez dos 60 minutos mínimos. Os controles de ponto juntados aos autos confirmam a concessão parcial. Rafael pede o pagamento do intervalo e a repercussão do valor em férias, 13º salário e FGTS.",
+  "question": "Quantos minutos por dia devem ser pagos, com qual acréscimo, e a parcela repercute nas demais verbas?",
+  "gold": {
+    "answer": "Aplica-se o art. 71, § 4º, da CLT na redação da Lei 13.467/2017, vigente desde 11/11/2017 e portanto aplicável a todo o contrato (2021-2023). São devidos apenas os 30 minutos suprimidos por dia, com acréscimo de 50% sobre o valor da hora normal. A parcela tem natureza indenizatória e, por isso, NÃO repercute em férias, 13º salário ou FGTS. A Súmula 437 do TST, que determinava o pagamento do período integral com natureza salarial, está superada para fatos posteriores a 11/11/2017.",
+    "required_citations": [
+      "CLT art. 71",
+      "Lei 13.467/2017 vigência"
+    ],
+    "supporting_citations": [
+      "Súmula 437 TST"
+    ],
+    "distractor_citations": [],
+    "rubric": [
+      {
+        "id": "r1",
+        "claim": "Awards only the suppressed 30 minutes, not the full 60-minute break.",
+        "weight": 3
+      },
+      {
+        "id": "r2",
+        "claim": "Applies the 50% surcharge over the normal hourly rate.",
+        "weight": 1
+      },
+      {
+        "id": "r3",
+        "claim": "Classifies the payment as indemnificatory, with NO repercussion on férias, 13º or FGTS.",
+        "weight": 2
+      },
+      {
+        "id": "r4",
+        "claim": "Explains that Súmula 437 TST is superseded for facts after 11 Nov 2017 (or otherwise justifies the temporal choice).",
+        "weight": 2
+      }
+    ]
+  }
+}
